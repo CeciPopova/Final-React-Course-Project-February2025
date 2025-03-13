@@ -1,3 +1,5 @@
+import './Contacts.css'
+
 export default function Contacts() {
     return (
         <div className="contact_section layout_padding">
