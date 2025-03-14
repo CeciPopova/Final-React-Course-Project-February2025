@@ -10,6 +10,8 @@ import Footer from "./components/footer/Footer"
 import Home from "./components/home/Home"
 import Testimonial from "./components/testimonial/Testimonial"
 import Navigation from './components/navigation/Navigation'
+import Login from './components/login/Login'
+import Register from './components/register/Register'
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
           <Route path='/testimonial' element={<Testimonial />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/contacts' element={<Contacts />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
 
       </div>
