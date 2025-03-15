@@ -12,6 +12,7 @@ import Testimonial from "./components/testimonial/Testimonial"
 import Navigation from './components/navigation/Navigation'
 import Login from './components/login/Login'
 import Register from './components/register/Register'
+import Details from './components/details/Details'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/contacts' element={<Contacts />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/details' element={<Details />} />
         </Routes>
 
       </div>

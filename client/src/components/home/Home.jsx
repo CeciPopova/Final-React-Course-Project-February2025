@@ -12,10 +12,10 @@ export default function Home() {
                                 <div className="col-md-12">
                                     <div className="banner_taital_main">
                                         <h1 className="banner_taital">Coffee <br />Lovers</h1>
-                                        <p className="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
+                                        <p className="banner_text">Explore the art and science of exquisite coffee with Coffee Lovers Signature Experiences. With several experiences to choose from, we invite you to learn about best-in-class brewing techniques and mixology skills. Come discover the world of coffee through immersive experiences designed to inspire.</p>
                                         <div className="btn_main">
                                             <div className="about_bt active"><Link to="/about">About Us</Link></div>
-                                            <div className="callnow_bt"><Link href="/contacts">Call Now</Link></div>
+                                            <div className="callnow_bt"><Link to="/catalog">Coffee Art</Link></div>
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@ export default function Home() {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="banner_taital_main">
-                                        <h1 className="banner_taital">Coffee <br />Lovers</h1>
+                                        <h1 className="banner_taital">Book A Signature Experience</h1>
                                         <p className="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
                                         <div className="btn_main">
                                             <div className="about_bt active"><a href="#">About Us</a></div>

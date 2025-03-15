@@ -18,12 +18,12 @@ export default function Footer() {
                             <ul>
                                 <li>
                                     <a href="https://globfone.com/call-phone/">
-                                        <i className="fa fa-phone" aria-hidden="true"></i><span className="padding_left_10">+30 6984203699</span>
+                                        <i className="fa fa-phone" aria-hidden="true"></i><span className="padding_left_10">+00 123 456 789</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://account.microsoft.com/profile">
-                                        <i className="fa fa-envelope" aria-hidden="true"></i><span className="padding_left_10">popova_cip@hotmail.com</span>
+                                        <i className="fa fa-envelope" aria-hidden="true"></i><span className="padding_left_10">coffee_lovers@hotmail.com</span>
                                     </a>
                                 </li>
                             </ul>

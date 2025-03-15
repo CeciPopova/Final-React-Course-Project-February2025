@@ -1,0 +1,23 @@
+.coffee-details {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.details_box {
+    width: 100%;
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px 0px;
+    padding: 0px 0px 30px 0px;
+}
+
+.details-img {
+    position: relative;
+    padding: 15px;
+}
+
+.details-btn {
+display: flex;
+}
