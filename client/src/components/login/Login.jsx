@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import './Login.css'
+import styles from './Login.module.css'
 
 export default function Login() {
     return (
-        <div className="login_section layout_padding">
+        <div className={styles["login_section"]}>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
@@ -16,15 +16,15 @@ export default function Login() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className="login_form" action="">
-                                    <div className='input_group'>
+                                <form className={styles["login_form"]} action="">
+                                    <div className={styles["input_group"]}>
                                         <input className="mail_text" type="name" placeholder="Your Name" name="name" />
                                     </div>
-                                    <div className='input_group'>
+                                    <div className={styles["input_group"]}>
                                         <input type="password" className="mail_text" placeholder="Your Password" name="password" />
                                     </div>
-                                    <div className="send_bt">
-                                        <button type='submit'>Login</button>
+                                    <div className={styles["send_bt"]}>
+                                        <button type="submit">Login</button>
                                     </div>
                                 </form>
                             </div>
@@ -34,7 +34,7 @@ export default function Login() {
                 </div>
             </div>
             <div>
-                <p>Don&apos;t have an acount?  <strong><Link to="/register"> Click here for Register!</Link></strong></p>
+                <p>Don&apos;t have an acount?  <strong><Link className={styles["strong"]} to="/register"> Click here for Register!</Link></strong></p>
             </div>
         </div>
     )

@@ -44,3 +44,11 @@ button {
     flex-direction: column;
     gap: 10px;
 }
+
+strong {
+    font-weight: 600;
+}
+
+.strong:hover {
+    color: red;
+}

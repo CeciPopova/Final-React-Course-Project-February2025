@@ -15,20 +15,20 @@
   gap: 5em;
 }
 
-.image_iman img {
-  border-radius: 0.3em;
-  height: 380px;
-  box-shadow: 0 0 15px rgba(0 0 0 0.3);
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
 }
 
-.about_taital_box {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
+.about_img {
+  height: 370px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
 }
 
 .cheers {
-    text-align: center;
+  text-align: center;
 }
-

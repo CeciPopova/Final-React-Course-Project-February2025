@@ -24,7 +24,7 @@
     padding-top: 0;
 }
 
-button {
+.register-button {
     background-color: red;
     padding: 9px 50px;
     border-radius: 30px;

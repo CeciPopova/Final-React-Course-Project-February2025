@@ -1,8 +1,8 @@
-import './Register.css'
+import styles from './Register.module.css'
 
 export default function Register() {
     return (
-        <div className="register_section layout_padding">
+        <div className={styles["register_section"]}>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
@@ -15,9 +15,9 @@ export default function Register() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className="register_form" action="">
+                                <form className={styles["register_form"]} action="">
                                     <div>
-                                        <div className='input_group'>
+                                        <div className={styles['input_group']}>
                                             <input className="mail_text" type="name" placeholder="Your Name" name="name" />
                                         </div>
                                         <div className='input_group'>
@@ -30,8 +30,8 @@ export default function Register() {
                                             <input type="password" className="mail_text" placeholder="Repeat Password" name="repassword" />
                                         </div>
                                     </div>
-                                    <div className="send_bt">
-                                        <button type='submit'>Register</button>
+                                    <div className={styles["send_bt"]}>
+                                        <button type='submit'className={styles['register-button']}>Register</button>
                                     </div>
                                 </form>
                             </div>
