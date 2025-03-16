@@ -1,95 +1,125 @@
 {
-    "coffees": [
-      {
-        "id": 1,
+    "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb": {
         "name": "Espresso",
-        "ingredients": ["Espresso"],
+        "ingredients": [
+            "Espresso"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 30,
-        "price": 2.50,
-        "image": "https://source.unsplash.com/400x300/?espresso,coffee"
-      },
-      {
-        "id": 2,
+        "price": 2.5,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBNfuF7qFY0NKB1iFZGnohdvD6J4eklL7bvA&s",
+        "_id": "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb"
+    },
+    "709861a1-66a0-4db1-9abb-e734619c1602": {
         "name": "Americano",
-        "ingredients": ["Espresso", "Hot Water"],
+        "ingredients": [
+            "Espresso",
+            "Hot Water"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 120,
-        "price": 3.00,
-        "image": "https://source.unsplash.com/400x300/?americano,coffee"
-      },
-      {
-        "id": 3,
+        "price": 3,
+        "image": "https://source.unsplash.com/400x300/?americano,coffee",
+        "_id": "709861a1-66a0-4db1-9abb-e734619c1602"
+    },
+    "4bfc6dae-4e40-4d5b-bbbf-be61db17c436": {
         "name": "Cappuccino",
-        "ingredients": ["Espresso", "Steamed Milk", "Foamed Milk"],
+        "ingredients": [
+            "Espresso",
+            "Steamed Milk",
+            "Foamed Milk"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 150,
-        "price": 4.50,
-        "image": "https://source.unsplash.com/400x300/?cappuccino,coffee"
-      },
-      {
-        "id": 4,
+        "price": 4.5,
+        "image": "images/coffeeEspresso.jpg",
+        "_id": "4bfc6dae-4e40-4d5b-bbbf-be61db17c436"
+    },
+    "c7f3d77a-f636-4a0d-af1f-3817b2d0080d": {
         "name": "Latte",
-        "ingredients": ["Espresso", "Steamed Milk"],
+        "ingredients": [
+            "Espresso",
+            "Steamed Milk"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 240,
         "price": 4.75,
-        "image": "https://source.unsplash.com/400x300/?latte,coffee"
-      },
-      {
-        "id": 5,
+        "image": "https://source.unsplash.com/400x300/?latte,coffee",
+        "_id": "c7f3d77a-f636-4a0d-af1f-3817b2d0080d"
+    },
+    "60cabc83-e2ac-46ce-a057-6bfde6bc389b": {
         "name": "Mocha",
-        "ingredients": ["Espresso", "Steamed Milk", "Chocolate Syrup", "Whipped Cream"],
+        "ingredients": [
+            "Espresso",
+            "Steamed Milk",
+            "Chocolate Syrup",
+            "Whipped Cream"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 240,
-        "price": 5.00,
-        "image": "https://source.unsplash.com/400x300/?mocha,coffee"
-      },
-      {
-        "id": 6,
+        "price": 5,
+        "image": "https://source.unsplash.com/400x300/?mocha,coffee",
+        "_id": "60cabc83-e2ac-46ce-a057-6bfde6bc389b"
+    },
+    "3787cf57-0165-4190-afce-aa8c37719262": {
         "name": "Macchiato",
-        "ingredients": ["Espresso", "Foamed Milk"],
+        "ingredients": [
+            "Espresso",
+            "Foamed Milk"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 90,
         "price": 4.25,
-        "image": "https://source.unsplash.com/400x300/?macchiato,coffee"
-      },
-      {
-        "id": 7,
+        "image": "https://source.unsplash.com/400x300/?macchiato,coffee",
+        "_id": "3787cf57-0165-4190-afce-aa8c37719262"
+    },
+    "15ace0fd-5521-425a-a0e7-015bb5275c77": {
         "name": "Flat White",
-        "ingredients": ["Espresso", "Steamed Milk"],
+        "ingredients": [
+            "Espresso",
+            "Steamed Milk"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 180,
         "price": 4.75,
-        "image": "https://source.unsplash.com/400x300/?flatwhite,coffee"
-      },
-      {
-        "id": 8,
+        "image": "https://source.unsplash.com/400x300/?flatwhite,coffee",
+        "_id": "15ace0fd-5521-425a-a0e7-015bb5275c77"
+    },
+    "82814c56-7615-4ddd-9d03-9b50cab2100c": {
         "name": "Affogato",
-        "ingredients": ["Espresso", "Vanilla Ice Cream"],
+        "ingredients": [
+            "Espresso",
+            "Vanilla Ice Cream"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 120,
-        "price": 5.50,
-        "image": "https://source.unsplash.com/400x300/?affogato,coffee"
-      },
-      {
-        "id": 9,
+        "price": 5.5,
+        "image": "https://source.unsplash.com/400x300/?affogato,coffee",
+        "_id": "82814c56-7615-4ddd-9d03-9b50cab2100c"
+    },
+    "f5f53910-7396-430c-bf5b-a49fded4e88e": {
         "name": "Cold Brew",
-        "ingredients": ["Cold Brew Coffee", "Ice"],
+        "ingredients": [
+            "Cold Brew Coffee",
+            "Ice"
+        ],
         "caffeine_mg": 200,
         "serving_size_ml": 300,
-        "price": 5.00,
-        "image": "https://source.unsplash.com/400x300/?coldbrew,coffee"
-      },
-      {
-        "id": 10,
+        "price": 5,
+        "image": "https://source.unsplash.com/400x300/?coldbrew,coffee",
+        "_id": "f5f53910-7396-430c-bf5b-a49fded4e88e"
+    },
+    "c1516d3e-c396-4c25-9213-8a2e6218103e": {
         "name": "Iced Latte",
-        "ingredients": ["Espresso", "Cold Milk", "Ice"],
+        "ingredients": [
+            "Espresso",
+            "Cold Milk",
+            "Ice"
+        ],
         "caffeine_mg": 64,
         "serving_size_ml": 300,
         "price": 5.25,
-        "image": "https://source.unsplash.com/400x300/?icedlatte,coffee"
-      }
-    ]
-  }
-  
+        "image": "https://source.unsplash.com/400x300/?icedlatte,coffee",
+        "_id": "c1516d3e-c396-4c25-9213-8a2e6218103e"
+    }
+}

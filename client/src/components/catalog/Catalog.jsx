@@ -1,8 +1,17 @@
 import './Catalog.css'
+import { useEffect, useState } from "react";
 
 import CoffeeItem from "../coffee-item/CoffeeItem";
 
 export default function Catalog() {
+    const [coffees, setCoffees] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3030/jsonstore/coffees")
+            .then((res) => res.json())
+            .then((data) => setCoffees(data));
+    }, []);
+
     return (
         <div className="coffee_section layout_padding">
             <div className="container">
@@ -19,14 +28,22 @@ export default function Catalog() {
                             <div className="container-fluid">
                                 <div className="row">
                                     <CoffeeItem />
-                                    <div className="col-lg-3 col-md-6">
-                                        <div className="coffee_img"><img src="images/img-2.png" /></div>
-                                        <div className="coffee_box">
-                                            <h3 className="types_text">BEAN VARIETIES</h3>
-                                            <p className="looking_text">looking at its layout. The point of</p>
-                                            <div className="read_bt"><a href="#">Read More</a></div>
-                                        </div>
+
+                                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+                                        {coffees.map((coffee) => (
+
+                                            <div key={coffee._id} className="col-lg-3 col-md-6" style={{ border: "1px solid #ddd", padding: "10px", borderRadius: "5px" }}>
+                                                <img src={coffee.image} alt={coffee.name} style={{ width: "100%", borderRadius: "5px" }} />
+                                                <h2>{coffee.name}</h2>
+                                                <p><strong>Ingredients:</strong> {coffee.ingredients.join(", ")}</p>
+                                                <p><strong>Caffeine:</strong> {coffee.caffeine_mg}mg</p>
+                                                <p><strong>Price:</strong> ${coffee.price.toFixed(2)}</p>
+                                            </div>
+
+                                        ))}
                                     </div>
+
+
                                     <div className="col-lg-3 col-md-6">
                                         <div className="coffee_img"><img src="images/img-3.png" /></div>
                                         <div className="coffee_box">
