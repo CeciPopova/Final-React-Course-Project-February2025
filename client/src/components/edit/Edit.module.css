@@ -1,0 +1,43 @@
+.create_section {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: aliceblue;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    text-align: center;
+}
+
+.input_group {
+    margin-bottom: 15px;
+    text-align: left;
+    
+}
+
+.add-button {
+    background-color: red;
+    padding: 9px 50px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #f4f4f4;
+}
+
+.send_bt {
+    margin-top: 30px;
+    width: 170px;
+    margin: 19px auto;
+    text-align: center;
+}
+.create_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

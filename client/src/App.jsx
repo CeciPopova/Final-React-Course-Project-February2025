@@ -13,6 +13,7 @@ import { UserContext } from './contexts/UserContext'
 import Logout from './components/logout/Logout'
 import Create from './components/create/Create'
 import Shop from './components/shop/Shop'
+import Edit from './components/edit/Edit'
 
 function App() {
   const [authData, setAuthData] = useState({});
@@ -40,6 +41,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/coffees/:coffeeId/details' element={<Details />} />
+            <Route path='/coffees/:coffeeId/edit' element={<Edit />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/shop' element={<Shop />} />
           </Routes>
