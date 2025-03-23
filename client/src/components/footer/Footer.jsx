@@ -2,6 +2,7 @@
 
 export default function Footer() {
     return (
+        <>
         <div className="footer_section layout_padding">
             <div className="container">
                 <div className="row">
@@ -32,5 +33,17 @@ export default function Footer() {
                 </div>
             </div>
         </div>
+        <div className="copyright_section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-12">
+                        <p className="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a>
+                            Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </>
     )
 }

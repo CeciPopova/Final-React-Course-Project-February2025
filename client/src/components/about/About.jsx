@@ -23,7 +23,7 @@ export default function About() {
             </div>
           </div>
           <div className={styles["row"]}>
-          <div className="col-md-6">
+            <div className="col-md-6">
               <div className={styles["image_iman"]}><img src="../../../public/images/coffeeBeans.jpg" className={styles["about_img"]} /></div>
             </div>
 
@@ -34,42 +34,77 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className={styles["row"]}>
-            <div className="col-md-6">
-              <div className="about_taital_box">
-                <h1 className="about_taital_1">Our Process</h1>
-                <p className=" about_text">From bean to cup, we take care of every step in our coffee-making process. Our expert roasters meticulously roast our beans to bring out the unique flavors and aromas characteristic of each variety. We offer a wide range of blends and single-origin coffees, ensuring there&apos;s something for every palate.</p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className={styles["image_iman"]}><img src="../../../public/images/caputsino.jpg" className={styles["about_img"]} /></div>
-            </div>
-          </div>
-          <div className={styles["row"]}>
-          <div className="col-md-6">
-              <div className={styles["image_iman"]}><img src="../../../public/images/coffeeBeans.jpg" className={styles["about_img"]} /></div>
-            </div>
 
-            <div className="col-md-6">
-              <div className="about_taital_box">
-                <h1 className="about_taital_1">Community Focused</h1>
-                <p className=" about_text">At <span className={styles["strong"]}>Coffee Lovers</span>, we believe in giving back. A portion of our proceeds goes to initiatives that support farmers, sustainable agriculture, and community development. We are committed to fostering positive change within the coffee industry and beyond.</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles["row"]}>
-            <div className="col-md-6">
-              <div className="about_taital_box">
-                <h1 className="about_taital_1">Join Us</h1>
-                <p className=" about_text">We invite you to explore our range of coffees and join our community of coffee lovers. Whether you’re brewing at home or visiting one of our cafes, we’re here to make your coffee experience unforgettable.</p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className={styles["image_iman"]}><img src="images/about-img.png" className={styles["about_img"]} /></div>
-            </div>
-          </div>
 
-          <div className={styles["cheers"]}>
+          
+            <div className="container">
+                <div id="custom_slider" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <h1 className="about_taital">What syas customers</h1>
+                                </div>
+                            </div>
+                            <div className="client_section_2">
+                                <div className="client_taital_main">
+                                    <div className="client_left">
+                                        <div className="client_img"><img src="images/client-img1.png" /></div>
+                                    </div>
+                                    <div className="client_right">
+                                        <h3 className="moark_text">Joy Moark</h3>
+                                        <p className="client_text">now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancynow use Lorem Ipsum as their default model text, </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <h1 className="about_taital">What syas customers</h1>
+                                </div>
+                            </div>
+                            <div className="client_section_2">
+                                <div className="client_taital_main">
+                                    <div className="client_left">
+                                        <div className="client_img"><img src="images/client-img1.png" /></div>
+                                    </div>
+                                    <div className="client_right">
+                                        <h3 className="moark_text">Joy Moark</h3>
+                                        <p className="client_text">now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancynow use Lorem Ipsum as their default model text, </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="carousel-item">
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <h1 className="about_taital">What syas customers</h1>
+                                </div>
+                            </div>
+                            <div className="client_section_2">
+                                <div className="client_taital_main">
+                                    <div className="client_left">
+                                        <div className="client_img"><img src="images/client-img1.png" /></div>
+                                    </div>
+                                    <div className="client_right">
+                                        <h3 className="moark_text">Joy Moark</h3>
+                                        <p className="client_text">now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancynow use Lorem Ipsum as their default model text, </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a className="carousel-control-prev" href="#custom_slider" role="button" data-slide="prev">
+                        <i className="fa fa-arrow-left"></i>
+                    </a>
+                    <a className="carousel-control-next" href="#custom_slider" role="button" data-slide="next">
+                        <i className="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div className={styles["cheers"]}>
             <p><span className='strong'>Thank you for being a part of our journey!</span></p>
             <p>Cheers,<br />
               The <span className={styles["strong"]}>Coffee Lovers</span> Team</p>
@@ -78,8 +113,9 @@ export default function About() {
           </div>
 
         </div>
+
       </div>
-    </div>
+    
 
   )
 }

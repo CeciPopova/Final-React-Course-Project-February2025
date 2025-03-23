@@ -48,9 +48,8 @@ export default function Catalog() {
                                                 <div className="coffee_img"><img src={coffee.image} /></div>
                                                 <div className="coffee_box">
                                                     <h3 className="types_text">{coffee.name}</h3>
-                                                    <p className="looking_text">{coffee.ingredients}</p>
                                                     <p className="looking_text">${coffee.price.toFixed(2)}</p>
-                                                    <div className="read_bt"><a href="#">Details</a></div>
+                                                    <div className="read_bt"><a href="">Details</a></div>
                                                 </div>
                                             </div>
                                         ))}

@@ -27,14 +27,18 @@ export default function Navigation() {
                             <Link className="nav-link" to="/catalog">Coffees</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">Shop</Link>
+                            <Link className="nav-link" to="/shop">Shop</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/contacts">Contact</Link>
-                        </li>
+                        {email
+
+                            ? (<li className="nav-item">
+                                <Link className="nav-link" to="/create">Create</Link>
+                            </li>)
+                            : ''
+                        }
                     </ul>
 
 
@@ -49,7 +53,7 @@ export default function Navigation() {
 
                             : (<div className="login_bt">
                                 <ul>
-                                    <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout {email}</Link></li>   
+                                    <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout {email}</Link></li>
                                 </ul>
                             </div>)
                         }
