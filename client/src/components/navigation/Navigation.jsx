@@ -3,6 +3,9 @@ import styles from './Navigation.module.css'
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
+
+
+
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,10 +34,19 @@ export default function Navigation() {
                             <Link className="nav-link" to="/contacts">Contact</Link>
                         </li>
                     </ul>
+
+
                     <form className="form-inline my-2 my-lg-0">
                         <div className="login_bt">
                             <ul>
                                 <li><Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link></li>
+                                <li><a href="#"><i className="fa fa-search" aria-hidden="true"></i></a></li>
+
+                            </ul>
+                        </div>
+                        <div className="logout_bt">
+                            <ul>
+                                <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout</Link></li>
                                 <li><a href="#"><i className="fa fa-search" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>

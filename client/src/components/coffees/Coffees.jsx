@@ -10,9 +10,6 @@ export default function Coffees() {
 
   }, []);
 
-
-console.log(coffees);
-
   return (
     <div>
       <h1>Coffee Menu</h1>

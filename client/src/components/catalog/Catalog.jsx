@@ -1,15 +1,13 @@
 import './Catalog.css'
 import { useEffect, useState } from "react";
 
-import CoffeeItem from "../coffee-item/CoffeeItem";
-
 export default function Catalog() {
     const [coffees, setCoffees] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:3030/jsonstore/coffees")
             .then((res) => res.json())
-            .then((data) => setCoffees(data));
+            .then((data) => setCoffees(Object.values(data)));
     }, []);
 
     return (
@@ -27,9 +25,9 @@ export default function Catalog() {
                         <div className="carousel-item active">
                             <div className="container-fluid">
                                 <div className="row">
-                                    <CoffeeItem />
+                                    {/* <CoffeeItem /> */}
 
-                                    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+                                    {/* <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
                                         {coffees.map((coffee) => (
 
                                             <div key={coffee._id} className="col-lg-3 col-md-6" style={{ border: "1px solid #ddd", padding: "10px", borderRadius: "5px" }}>
@@ -41,29 +39,27 @@ export default function Catalog() {
                                             </div>
 
                                         ))}
-                                    </div>
+                                    </div> */}
 
 
-                                    <div className="col-lg-3 col-md-6">
-                                        <div className="coffee_img"><img src="images/img-3.png" /></div>
-                                        <div className="coffee_box">
-                                            <h3 className="types_text">COFFEE & PASTRY</h3>
-                                            <p className="looking_text">looking at its layout. The point of</p>
-                                            <div className="read_bt"><a href="#">Read More</a></div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-3 col-md-6">
-                                        <div className="coffee_img"><img src="images/img-4.png" /></div>
-                                        <div className="coffee_box">
-                                            <h3 className="types_text">COFFEE TO GO</h3>
-                                            <p className="looking_text">looking at its layout. The point of</p>
-                                            <div className="read_bt"><a href="#">Read More</a></div>
-                                        </div>
+                                    <div className="col-lg-3 col-md-6 row-coffees">
+                                        {coffees.map((coffee) => (
+                                            <div key={coffee._id}>
+                                                <div className="coffee_img"><img src={coffee.image} /></div>
+                                                <div className="coffee_box">
+                                                    <h3 className="types_text">{coffee.name}</h3>
+                                                    <p className="looking_text">{coffee.ingredients}</p>
+                                                    <p className="looking_text">${coffee.price.toFixed(2)}</p>
+                                                    <div className="read_bt"><a href="#">Details</a></div>
+                                                </div>
+                                            </div>
+                                        ))}
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
+                        {/* <div className="carousel-item">
                             <div className="container-fluid">
                                 <div className="row">
                                     <CoffeeItem />
@@ -94,7 +90,7 @@ export default function Catalog() {
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item">
+                        <div className="carousel-item"> 
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-lg-3 col-md-6">
@@ -131,7 +127,7 @@ export default function Catalog() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>  */}
                     </div>
                     <a className="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
                         <i className="fa fa-arrow-left"></i>
