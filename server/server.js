@@ -1649,7 +1649,51 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        games: [
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Satisfactory",
+                "category": "Automation",
+                "maxLevel": "8",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0a/Satifactory_video_game_cover_art.jpg",
+                "summary": "Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!",
+                "_createdOn": 1742547587318,
+                "_id": "dbb3d054-b0ce-40a1-83fb-5055ac69262a"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "EVE Online",
+                "category": "Space Simulation",
+                "maxLevel": "10",
+                "imageUrl": "https://images.ctfassets.net/7lhcm73ukv5p/626ACEfcmyLsmP31Y4HxOL/781c520bcbf81878c85765df50414f9a/EVE_News_1920x1080.jpg",
+                "summary": "EVE Vanguard is an MMOFPS set in the deep, persistent, far-future universe of New Eden. As an elite mercenary whose ground operations directly influence the massive player-driven conflicts taking place in space above, every deployment, resource gathered, and battle fought will contribute to the ever-evolving war and narrative of New Eden.",
+                "_createdOn": 1742547994232,
+                "_id": "7708ee72-1efc-4f6d-98c8-c2d97966accd"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Satisfactory 2",
+                "category": "Automation",
+                "maxLevel": "8",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0a/Satifactory_video_game_cover_art.jpg",
+                "summary": "Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!",
+                "_createdOn": 1742548075497,
+                "_id": "d00b0a83-b6ed-4072-93be-0998c0e58482"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "World of Warcraft",
+                "category": "MMO RPG",
+                "maxLevel": "22",
+                "imageUrl": "https://blz-contentstack-images.akamaized.net/v3/assets/blt3452e3b114fab0cd/bltc204f2b89b02a47e/675366f579e7bb4086a76145/patch_notes.jpg",
+                "summary": "Travel deep into the goblin city of Undermine and learn to D.R.I.V.E., join a cartel, adventure in two new delves, a new dungeon: Operation Floodgate, face Gallywix in the Liberation of Undermine raid, battle in a new PvP Arena— and more! ",
+                "_createdOn": 1742548135130,
+                "_id": "a404709c-97bd-4827-a525-ac8a57940ab9"
+            }        
+
+        ]
+
     };
     var rules$1 = {
     	users: {
