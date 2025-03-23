@@ -22,8 +22,12 @@ function App() {
     setAuthData(resultData);
   };
 
+  const userLogoutHandler = () => {
+    setAuthData({});
+  }
+
   return (
-    <UserContext.Provider value={{ ...authData, userLoginHandler }}>
+    <UserContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler }}>
       <>
         <div className="header_section">
           <Navigation />
