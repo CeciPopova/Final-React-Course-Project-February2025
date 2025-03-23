@@ -1,6 +1,31 @@
+import { useContext } from 'react';
+import { useRegister } from '../../api/authApi';
 import styles from './Register.module.css'
+import { UserContext } from '../../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+    const navigate = useNavigate();
+    const { register } = useRegister();
+    const { userLoginHandler } = useContext(UserContext);
+
+    const registerHandler = async (formData) => {
+        const { email, password } = Object.fromEntries(formData);
+        const confirmPassword = formData.get('confirm-password');
+
+        if (password !== confirmPassword) {
+            console.log('Password missmatch!');
+
+            return;
+        }
+
+        const authData = await register(email, password);
+        console.log(authData);
+
+        userLoginHandler(authData);
+
+        navigate('/');
+    }
     return (
         <div className={styles["register_section"]}>
             <div className="container">
@@ -15,7 +40,7 @@ export default function Register() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className={styles["register_form"]} action="">
+                                <form className={styles["register_form"]} action={registerHandler}>
                                     <div>
                                         <div className={styles['input_group']}>
                                             <input className="mail_text" type="name" placeholder="Your Name" name="name" />
@@ -27,11 +52,11 @@ export default function Register() {
                                             <input type="password" className="mail_text" placeholder="Your Password" name="password" />
                                         </div>
                                         <div className='input_group'>
-                                            <input type="password" className="mail_text" placeholder="Repeat Password" name="repassword" />
+                                            <input type="password" className="mail_text" placeholder="Confirm Password" name="confirm-password" />
                                         </div>
                                     </div>
                                     <div className={styles["send_bt"]}>
-                                        <button type='submit'className={styles['register-button']}>Register</button>
+                                        <button type='submit' className={styles['register-button']}>Register</button>
                                     </div>
                                 </form>
                             </div>
