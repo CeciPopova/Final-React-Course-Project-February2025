@@ -1,25 +1,26 @@
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
 import { useActionState } from 'react';
+import { useLogin } from '../../api/authApi';
 
 
 export default function Login({
     onLogin
 }) {
     const navigate = useNavigate();
+    const { login } = useLogin();
 
-    const loginHandler = (previousState, formData) => {
+    const loginHandler = async (previousState, formData) => {
         const values = Object.fromEntries(formData);
 
-        onLogin(values.email);
+        const authData = await login(values.email, values.password);
 
-        //navigate('/coffees');
+        onLogin(authData);
 
-        return values;
+        navigate('/catalog');
     }
-const [values, loginAction, isPending] = useActionState(loginHandler, {email: '', password: ''});
+    const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
 
-console.log(values);
 
     return (
         <div className={styles["login_section"]}>
