@@ -12,6 +12,7 @@ import Register from './components/register/Register'
 import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
 import { useState } from 'react'
+import { UserContext } from './contexts/UserContext'
 
 function App() {
   const [authData, setAuthData] = useState({});
@@ -21,28 +22,30 @@ function App() {
   };
 
   return (
-    <>
-      <div className="header_section">
-        <Navigation />
+    <UserContext.Provider value={{...authData, userLoginHandler}}>
+      <>
+        <div className="header_section">
+          <Navigation />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/catalog' element={<Catalog />} />
-          <Route path='/testimonial' element={<Testimonial />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/contacts' element={<Contacts />} />
-          <Route path='/login' element={<Login onLogin={userLoginHandler} />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/details' element={<Details />} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/catalog' element={<Catalog />} />
+            <Route path='/testimonial' element={<Testimonial />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path='/contacts' element={<Contacts />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/details' element={<Details />} />
 
-        </Routes>
+          </Routes>
 
-      </div>
+        </div>
 
-      <Footer />
-      <Copyright />
-    </>
+        <Footer />
+        <Copyright />
+      </>
+    </UserContext.Provider>
   )
 }
 
