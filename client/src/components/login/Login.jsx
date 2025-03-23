@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
+import { useActionState } from 'react';
 
 
 export default function Login({
@@ -7,12 +8,18 @@ export default function Login({
 }) {
     const navigate = useNavigate();
 
-    const loginAction = (FormData) => {
-        const email = FormData.get('email');
+    const loginHandler = (previousState, formData) => {
+        const values = Object.fromEntries(formData);
 
-        onLogin(email);
-        navigate('/coffees');
+        onLogin(values.email);
+
+        //navigate('/coffees');
+
+        return values;
     }
+const [values, loginAction, isPending] = useActionState(loginHandler, {email: '', password: ''});
+
+console.log(values);
 
     return (
         <div className={styles["login_section"]}>
@@ -36,7 +43,7 @@ export default function Login({
                                         <input type="password" className="mail_text" placeholder="Your Password" name="password" />
                                     </div>
                                     <div className={styles["send_bt"]}>
-                                        <button type="submit">Login</button>
+                                        <button type="submit" disabled={isPending}>Login</button>
                                     </div>
                                 </form>
                             </div>
