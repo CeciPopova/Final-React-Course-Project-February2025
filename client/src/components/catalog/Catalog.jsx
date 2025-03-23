@@ -1,15 +1,9 @@
+import { Link } from 'react-router-dom';
+import { useCoffees } from '../../api/coffeeApi'
 import './Catalog.css'
-import { useEffect, useState } from "react";
 
 export default function Catalog() {
-    const [coffees, setCoffees] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:3030/jsonstore/coffees")
-            .then((res) => res.json())
-            .then((data) => setCoffees(Object.values(data)));
-    }, []);
-
+    const { coffees } = useCoffees();
     return (
         <div className="coffee_section layout_padding">
             <div className="container">
@@ -41,20 +35,24 @@ export default function Catalog() {
                                         ))}
                                     </div> */}
 
+                                    {coffees.length === 0
+                                        ? <h1>No coffees yet!</h1>
+                                        : (
 
-                                    <div className="col-lg-3 col-md-6 row-coffees">
-                                        {coffees.map((coffee) => (
-                                            <div key={coffee._id}>
-                                                <div className="coffee_img"><img src={coffee.image} /></div>
-                                                <div className="coffee_box">
-                                                    <h3 className="types_text">{coffee.name}</h3>
-                                                    <p className="looking_text">${coffee.price.toFixed(2)}</p>
-                                                    <div className="read_bt"><a href="">Details</a></div>
-                                                </div>
+                                            <div className="col-lg-3 col-md-6 row-coffees">
+                                                {coffees.map((coffee) => (
+                                                    <div key={coffee._id}>
+                                                        <div className="coffee_img"><img src={coffee.image} /></div>
+                                                        <div className="coffee_box">
+                                                            <h3 className="types_text">{coffee.name}</h3>
+                                                            <p className="looking_text">${coffee.price}</p>
+                                                            <div className="read_bt"><Link to="/details">Details</Link></div>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
-                                        ))}
-
-                                    </div>
+                                            )
+                                    }
                                 </div>
                             </div>
                         </div>

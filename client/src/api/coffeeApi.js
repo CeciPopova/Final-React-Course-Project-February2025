@@ -1,9 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import request from "../utils/requester"
 import { UserContext } from "../contexts/UserContext";
+import { useEffect } from "react";
 
 const baseUrl = 'http://localhost:3030/data/coffees';
 
+export const useCoffees = () => {
+    const [coffees, setCoffees] = useState([]);
+
+    useEffect(() => {
+        request.get(baseUrl)
+        .then(setCoffees)
+    }, []);
+
+    return {
+        coffees,
+    }
+}
 
 export const useCreateCoffee = () => {
     const { accessToken } = useContext(UserContext)

@@ -44,7 +44,7 @@ export default function Create() {
                                             <input type="number" className="mail_text" placeholder="Serving size ml" name="serving_size_ml"  />
                                         </div>
                                         <div className='input_group'>
-                                            <input type="number" className="mail_text" placeholder="Price" name="price" />
+                                            <input type="text" className="mail_text" placeholder="Price" name="price" />
                                         </div>
                                         <div className='input_group'>
                                             <input type="text" className="mail_text" placeholder="Image URL" name="image" />
