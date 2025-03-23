@@ -13,6 +13,7 @@ import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
 import { useState } from 'react'
 import { UserContext } from './contexts/UserContext'
+import Logout from './components/logout/Logout'
 
 function App() {
   const [authData, setAuthData] = useState({});
@@ -22,7 +23,7 @@ function App() {
   };
 
   return (
-    <UserContext.Provider value={{...authData, userLoginHandler}}>
+    <UserContext.Provider value={{ ...authData, userLoginHandler }}>
       <>
         <div className="header_section">
           <Navigation />
@@ -37,9 +38,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/details' element={<Details />} />
-
+            <Route path='/logout' element={<Logout />} />
           </Routes>
-
         </div>
 
         <Footer />
