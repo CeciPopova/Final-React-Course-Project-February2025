@@ -1,6 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-
-
 import About from "./components/about/About"
 import Blog from "./components/blog/Blog"
 import Contacts from "./components/contacts/Contact"
@@ -16,11 +14,10 @@ import Catalog from './components/catalog/Catalog'
 import { useState } from 'react'
 
 function App() {
-  const [email, setEmail] = useState('');
+  const [authData, setAuthData] = useState({});
 
-  const userLoginHandler = (authData) => {
-    console.log(authData);
-    setEmail(authData.email);
+  const userLoginHandler = (resultData) => {
+    setAuthData(resultData);
   };
 
   return (
