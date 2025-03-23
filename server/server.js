@@ -1692,6 +1692,42 @@
                 "_id": "a404709c-97bd-4827-a525-ac8a57940ab9"
             }        
 
+        ],
+        coffees: [
+            {
+                "_ownerId": "a7198302-8af6-48b3-b05b-4621615368e7",
+                "name": "test",
+                "ingredients": "thanks ",
+                "caffeine_mg": "email ",
+                "serving_size_ml": "dfg",
+                "price": "20",
+                "image": "https://weu-az-web-ca-cdn.azureedge.net/mediacontainer/medialibraries/mypetdoctor/images/blog-images/outdoor-cat.webp?ext=.webp",
+                "_createdOn": 1742740333261,
+                "_id": "44657380-4197-4237-b11a-acf760ac959d"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Espresso",
+                "ingredients": "espresso",
+                "caffeine_mg": "64",
+                "serving_size_ml": "30",
+                "price": "2",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBNfuF7qFY0NKB1iFZGnohdvD6J4eklL7bvA&s",
+                "_createdOn": 1742741433408,
+                "_id": "4ca10324-4535-4292-b864-c7480cd3a507"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "name": "Cappuccino",
+                "ingredients": "espresso, steamed milk, foamed milk",
+                "caffeine_mg": "64",
+                "serving_size_ml": "150",
+                "price": "5",
+                "image": "images/coffeeEspresso.jpg",
+                "_createdOn": 1742741717884,
+                "_id": "a8175108-1138-4471-ba88-b43c0d0de6e9"
+            }
+        
         ]
 
     };
