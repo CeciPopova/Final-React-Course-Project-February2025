@@ -13,8 +13,14 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
+import { useState } from 'react'
 
 function App() {
+  const [email, setEmail] = useState('');
+
+  const userLoginHandler = (email) => {
+    setEmail(email);
+  };
 
   return (
     <>
@@ -28,7 +34,7 @@ function App() {
           <Route path='/testimonial' element={<Testimonial />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/contacts' element={<Contacts />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login onLogin={userLoginHandler} />} />
           <Route path='/register' element={<Register />} />
           <Route path='/details' element={<Details />} />
 

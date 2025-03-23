@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
 
-export default function Login() {
+
+export default function Login({
+    onLogin
+}) {
+    const navigate = useNavigate();
+
+    const loginAction = (FormData) => {
+        const email = FormData.get('email');
+
+        onLogin(email);
+        navigate('/coffees');
+    }
+
     return (
         <div className={styles["login_section"]}>
             <div className="container">
@@ -16,9 +28,9 @@ export default function Login() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className={styles["login_form"]} action="">
+                                <form className={styles["login_form"]} action={loginAction}>
                                     <div className={styles["input_group"]}>
-                                        <input className="mail_text" type="name" placeholder="Your Name" name="name" />
+                                        <input className="mail_text" type="email" placeholder="Your Email" name="email" />
                                     </div>
                                     <div className={styles["input_group"]}>
                                         <input type="password" className="mail_text" placeholder="Your Password" name="password" />
@@ -30,11 +42,11 @@ export default function Login() {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div>
-                <p>Don&apos;t have an acount?  <strong><Link className={styles["strong"]} to="/register"> Click here for Register!</Link></strong></p>
+                <p>Don&apos;t have an acount?  <strong><Link to="/register" className={styles["strong"]} > Click here for Register!</Link></strong></p>
             </div>
         </div>
     )
