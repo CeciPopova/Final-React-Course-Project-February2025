@@ -1,10 +1,12 @@
+import { useContext } from 'react';
 import styles from './Navigation.module.css'
 
 import { Link } from "react-router-dom";
+import { UserContext } from '../../contexts/UserContext';
 
 export default function Navigation() {
 
-
+    const { email } = useContext(UserContext);
 
     return (
         <div className="container">
@@ -37,19 +39,20 @@ export default function Navigation() {
 
 
                     <form className="form-inline my-2 my-lg-0">
-                        <div className="login_bt">
-                            <ul>
-                                <li><Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link></li>
-                                <li><a href="#"><i className="fa fa-search" aria-hidden="true"></i></a></li>
+                        {!email
+                            ? (<div className="login_bt">
+                                <ul>
+                                    <li><Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link></li>
 
-                            </ul>
-                        </div>
-                        <div className="logout_bt">
-                            <ul>
-                                <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout</Link></li>
-                                <li><a href="#"><i className="fa fa-search" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
+                                </ul>
+                            </div>)
+
+                            : (<div className="login_bt">
+                                <ul>
+                                    <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout {email}</Link></li>   
+                                </ul>
+                            </div>)
+                        }
                     </form>
                 </div>
             </nav>
