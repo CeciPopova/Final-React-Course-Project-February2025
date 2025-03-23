@@ -10,11 +10,24 @@ export const useCoffees = () => {
 
     useEffect(() => {
         request.get(baseUrl)
-        .then(setCoffees)
+            .then(setCoffees)
     }, []);
 
     return {
         coffees,
+    }
+}
+
+export const useCoffee = (coffeeId) => {
+    const [coffee, setCoffee] = useState({});
+
+    useEffect(() => {
+        request.get(`${baseUrl}/${coffeeId}`)
+            .then(setCoffee);
+    }, [coffeeId])
+
+    return {
+        coffee,
     }
 }
 

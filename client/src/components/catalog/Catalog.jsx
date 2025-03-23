@@ -46,7 +46,7 @@ export default function Catalog() {
                                                         <div className="coffee_box">
                                                             <h3 className="types_text">{coffee.name}</h3>
                                                             <p className="looking_text">${coffee.price}</p>
-                                                            <div className="read_bt"><Link to="/details">Details</Link></div>
+                                                            <div className="read_bt"><Link to={`/coffees/${coffee._id}/details`} >Details</Link></div>
                                                         </div>
                                                     </div>
                                                 ))}
