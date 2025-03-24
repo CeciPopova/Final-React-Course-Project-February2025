@@ -33,7 +33,7 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-        <div className="copyright_section">
+         <div className="copyright_section">
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
@@ -42,7 +42,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 
         </>
     )

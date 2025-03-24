@@ -18,7 +18,7 @@ export default function Details() {
 
         await deleteCoffee(coffeeId);
 
-        navigate('/coffees')
+        navigate('/catalog');
     }
 
 

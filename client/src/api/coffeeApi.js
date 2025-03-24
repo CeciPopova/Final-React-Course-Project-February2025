@@ -60,7 +60,7 @@ export const useDeleteCoffee = () => {
     const {request} = useAuth();
 
     const deleteCoffee = (coffeeId) =>
-         request.delete(`${baseUrl}/${coffeeId}`);
+         request.del(`${baseUrl}/${coffeeId}`);
 
     return {
         deleteCoffee,
