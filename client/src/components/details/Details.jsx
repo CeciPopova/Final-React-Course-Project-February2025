@@ -1,9 +1,11 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
+import useAuth from "../../hooks/useAuth";
 
 
 export default function Details() {
+    const { _id: userId } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
@@ -21,6 +23,7 @@ export default function Details() {
         navigate('/catalog');
     }
 
+    const isOwner = userId === coffee._ownerId;
 
     return (
         <div className="details-container">
@@ -42,10 +45,12 @@ export default function Details() {
                                 <p className="lorem_text">serving_size_ml {coffee.serving_size_ml}</p>
                                 <p className="lorem_text">price {coffee.price}</p>
                             </div>
+                            {isOwner && (
                             <div className={styles["details-btn"]}>
                                 <div className="read_btn"><Link className="button" to={`/coffees/${coffee._id}/edit`}>Edit</Link></div>
                                 <div className="read_btn"><button onClick={coffeeDeleteClickHandler}>Delete</button></div>
                             </div>
+                            )}
                         </div>
                     </div>
                 </div>
