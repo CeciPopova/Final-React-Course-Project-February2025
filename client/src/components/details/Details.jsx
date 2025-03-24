@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
 import useAuth from "../../hooks/useAuth";
-
+import LikeButton from "./Likebutton";
 
 export default function Details() {
     const { _id: userId } = useAuth();
@@ -50,13 +50,8 @@ export default function Details() {
                                 (<div className={styles["details-btn"]}>
                                     <div className="read_btn"><Link className="button" to={`/coffees/${coffee._id}/edit`}>Edit</Link></div>
                                     <div className="read_btn"><button className="button" onClick={coffeeDeleteClickHandler}>Delete</button></div>
-                                </div>
-                                )
-                                : (<div className={styles["details-btn"]}>
-                                    <div className="read_btn"><button onClick={coffeeDeleteClickHandler}>Delete</button></div>
-                                </div>
-                                )
-
+                                </div>)
+                                : <LikeButton />
                             }
                         </div>
                     </div>

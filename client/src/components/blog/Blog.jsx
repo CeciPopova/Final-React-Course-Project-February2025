@@ -1,12 +1,15 @@
 import './Blog.css'
 
 export default function Blog() {
+
+
+    
     return (
         <div className="blog_section layout_padding">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <h1 className="about_taital">Our Blog</h1>
+                        <h1 className="about_taital">Latest Coffee Drinks</h1>
                     </div>
                 </div>
                 <div className="blog_section_2">
