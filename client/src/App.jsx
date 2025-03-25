@@ -13,6 +13,7 @@ import Create from './components/create/Create'
 import Shop from './components/shop/Shop'
 import Edit from './components/edit/Edit'
 import UserProvider from './providers/UserProvider'
+import AuthGuard from './components/guards/AuthGuard'
 
 function App() {
 
@@ -26,11 +27,13 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/blog' element={<Blog />} />
-            <Route path='/create' element={<Create />} />
+            <Route element={<AuthGuard />}>
+              <Route path='/create' element={<Create />} />
+              <Route path='/coffees/:coffeeId/edit' element={<Edit />} />
+            </Route >
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/coffees/:coffeeId/details' element={<Details />} />
-            <Route path='/coffees/:coffeeId/edit' element={<Edit />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/shop' element={<Shop />} />
           </Routes>
