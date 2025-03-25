@@ -10,12 +10,12 @@ import CommentsCreate from "../../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { _id, email } = useAuth();
+    const { userId, email, username } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
     const { deleteCoffee } = useDeleteCoffee();
-    const { comments, addComment} = useComments(coffeeId);
+    const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
     const coffeeDeleteClickHandler = async () => {
@@ -31,14 +31,13 @@ export default function Details() {
     }
 
     const commentCreateHandler = async (comment) => {
-// TODO: try/catch
+        // TODO: try/catch
         const newComment = await create(coffeeId, comment);
 
-        addComment(state => [...state, newComment]);
+        //addComment(state => [...state, newComment]);
+        addComment({ ...newComment, author: { username } })
     };
 
-
-    const userId = _id
     const isOwner = userId === coffee._ownerId;
 
     return (
@@ -73,10 +72,11 @@ export default function Details() {
                                 : (
                                     <div>
                                         <LikeButton />
-                                        <CommentsCreate 
-                                          email={email}
-                                          coffeeId={coffeeId}
-                                          onCreate={commentCreateHandler}
+                                        <CommentsCreate
+                                            username={username}
+                                            email={email}
+                                            coffeeId={coffeeId}
+                                            onCreate={commentCreateHandler}
                                         />
                                     </div>
                                 )
