@@ -8,15 +8,15 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
-import { useState } from 'react'
 import { UserContext } from './contexts/UserContext'
 import Logout from './components/logout/Logout'
 import Create from './components/create/Create'
 import Shop from './components/shop/Shop'
 import Edit from './components/edit/Edit'
+import usePersistedState from './hooks/usePersistedState'
 
 function App() {
-  const [authData, setAuthData] = useState({});
+  const [authData, setAuthData] = usePersistedState('auth',{});
 
   const userLoginHandler = (resultData) => {
     console.log(resultData);

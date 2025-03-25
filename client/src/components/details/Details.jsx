@@ -10,12 +10,12 @@ import CommentsCreate from "../../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { _id , username} = useAuth();
+    const { _id, username } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
     const { deleteCoffee } = useDeleteCoffee();
-    const {comments, addComment} = useComments(coffeeId);
+    const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
     const coffeeDeleteClickHandler = async () => {
@@ -42,10 +42,8 @@ export default function Details() {
         addComment({ ...commentResult, author: { username } })
     };
 
-const coffeeOwner = username;
-console.log(coffeeOwner);
 
-const userId = _id
+    const userId = _id
     const isOwner = userId === coffee._ownerId;
 
     return (
@@ -67,7 +65,7 @@ const userId = _id
                                 <p className="lorem_text"><strong>Caffeine: </strong> {coffee.caffeine_mg}mg</p>
                                 <p className="lorem_text"><strong>Size: </strong> {coffee.serving_size_ml}ml</p>
                                 <p className="lorem_text"><strong>Added on: </strong>{moment(coffee._createdOn).format('LL')}</p>
-                                <CommentsView comments={comments}/>
+                                <CommentsView comments={comments} />
 
                             </div>
                             {isOwner
