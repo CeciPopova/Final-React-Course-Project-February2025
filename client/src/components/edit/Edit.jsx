@@ -1,15 +1,17 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import styles from './Edit.module.css'
-import {  useCoffee, useEditCoffee } from '../../api/coffeeApi';
+import { useCoffee, useEditCoffee } from '../../api/coffeeApi';
+import useAuth from '../../hooks/useAuth';
 
 
 export default function Edit() {
     const navigate = useNavigate();
+    const { userId } = useAuth()
     const { coffeeId } = useParams();
     const { edit } = useEditCoffee();
-    const {coffee} = useCoffee(coffeeId);
-    
-    
+    const { coffee } = useCoffee(coffeeId);
+
+
 
     const formAction = async (formData) => {
         const coffeeData = Object.fromEntries(formData);
@@ -20,6 +22,10 @@ export default function Edit() {
     }
 
 
+    const isOwner = userId === coffee._ownerId;
+    if (!isOwner) {
+        <Navigate to="/catalog" />
+    }
     return (
         <div className={styles["create_section"]}>
             <div className="container">
