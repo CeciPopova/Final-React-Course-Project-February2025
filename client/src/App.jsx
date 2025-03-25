@@ -8,27 +8,16 @@ import Login from './components/login/Login'
 import Register from './components/register/Register'
 import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
-import { UserContext } from './contexts/UserContext'
 import Logout from './components/logout/Logout'
 import Create from './components/create/Create'
 import Shop from './components/shop/Shop'
 import Edit from './components/edit/Edit'
-import usePersistedState from './hooks/usePersistedState'
+import UserProvider from './providers/UserProvider'
 
 function App() {
-  const [authData, setAuthData] = usePersistedState('auth',{});
-
-  const userLoginHandler = (resultData) => {
-    console.log(resultData);
-    setAuthData(resultData);
-  };
-
-  const userLogoutHandler = () => {
-    setAuthData({});
-  }
 
   return (
-    <UserContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler }}>
+    <UserProvider>
       <>
         <div className="header_section">
           <Navigation />
@@ -48,7 +37,7 @@ function App() {
         </div>
         <Footer />
       </>
-    </UserContext.Provider>
+    </UserProvider>
   )
 }
 
