@@ -14,7 +14,7 @@ export default function useAuth() {
                 ...options.headers
             }
         }
-        return request.baseRequest(method, url, data, optionWrapper);
+        return request.baseRequest(method, url, data, authData.accessToken ? optionWrapper : options);
     }
     return {
         ...authData,

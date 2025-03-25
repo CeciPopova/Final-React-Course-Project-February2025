@@ -1,15 +1,22 @@
+import moment from 'moment';
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
 import useAuth from "../../hooks/useAuth";
 import LikeButton from "./Likebutton";
+import CommentsView from "../../coments-show/CommentsShow";
+import CommentsCreate from "../../comments-create/CommentsCreate";
+import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { _id: userId } = useAuth();
+    const { _id , username} = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
     const { deleteCoffee } = useDeleteCoffee();
+    const {comments, addComment} = useComments(coffeeId);
+    const { create } = useCreateComment();
 
     const coffeeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to delete ${coffee.name} coffee?`);
@@ -23,6 +30,22 @@ export default function Details() {
         navigate('/catalog');
     }
 
+    const commentCreateHandler = async (formData) => {
+        const comment = formData.get('comment');
+
+
+
+        // Server update
+        const commentResult = await create(coffeeId, comment);
+
+        // Local state update
+        addComment({ ...commentResult, author: { username } })
+    };
+
+const coffeeOwner = username;
+console.log(coffeeOwner);
+
+const userId = _id
     const isOwner = userId === coffee._ownerId;
 
     return (
@@ -32,7 +55,7 @@ export default function Details() {
                     <div className="blog_img">
                         <img src={coffee.image} />
                     </div>
-                    <h4 className="date_text">{coffee._createdOn}</h4>
+                    <h4 className="date_text">Price: {coffee.price}$</h4>
                 </div>
 
                 <div className="col-md-6">
@@ -40,10 +63,12 @@ export default function Details() {
                         <div className="details-text">
                             <h4 className="prep_text">{coffee.name}</h4>
                             <div>
-                                <p className="lorem_text">ingredients {coffee.ingredients}</p>
-                                <p className="lorem_text">caffeine_mg {coffee.caffeine_mg}</p>
-                                <p className="lorem_text">serving_size_ml {coffee.serving_size_ml}</p>
-                                <p className="lorem_text">price {coffee.price}</p>
+                                <p className="lorem_text"><strong>ingredients: </strong> {coffee.ingredients}</p>
+                                <p className="lorem_text"><strong>Caffeine: </strong> {coffee.caffeine_mg}mg</p>
+                                <p className="lorem_text"><strong>Size: </strong> {coffee.serving_size_ml}ml</p>
+                                <p className="lorem_text"><strong>Added on: </strong>{moment(coffee._createdOn).format('LL')}</p>
+                                <CommentsView comments={comments}/>
+
                             </div>
                             {isOwner
                                 ?
@@ -51,9 +76,16 @@ export default function Details() {
                                     <div className="read_btn"><Link className="button" to={`/coffees/${coffee._id}/edit`}>Edit</Link></div>
                                     <div className="read_btn"><button className="button" onClick={coffeeDeleteClickHandler}>Delete</button></div>
                                 </div>)
-                                : <LikeButton />
+
+                                : (
+                                    <div>
+                                        <LikeButton />
+                                        <CommentsCreate />
+                                    </div>
+                                )
                             }
                         </div>
+
                     </div>
                 </div>
             </div>
