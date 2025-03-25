@@ -34,7 +34,7 @@ export const useCoffee = (coffeeId) => {
 
 export const useCreateCoffee = () => {
 
-    const {request} = useAuth();
+    const { request } = useAuth();
 
     const create = (coffeeData) => {
         return request.post(baseUrl, coffeeData);
@@ -46,25 +46,45 @@ export const useCreateCoffee = () => {
 }
 
 export const useEditCoffee = () => {
-    const {request} = useAuth();
+    const { request } = useAuth();
 
-    const edit = (coffeeId, coffeeData) => 
+    const edit = (coffeeId, coffeeData) =>
         request.put(`${baseUrl}/${coffeeId}`, { ...coffeeData, _id: coffeeId });
-    
+
     return {
         edit,
     }
 }
 
 export const useDeleteCoffee = () => {
-    const {request} = useAuth();
+    const { request } = useAuth();
 
     const deleteCoffee = (coffeeId) =>
-         request.del(`${baseUrl}/${coffeeId}`);
+        request.del(`${baseUrl}/${coffeeId}`);
 
     return {
         deleteCoffee,
     }
 
+}
+
+export const useLatestCoffees = () => {
+    const [latestCoffees, setLatestCoffees] = useState([]);
+
+
+    useEffect(() => {
+
+        const searchParams = new URLSearchParams({
+            sortBy: '_createdOn desc',
+            pageSize: 2,
+        })
+
+        request.get(`${baseUrl}?${searchParams.toString()}`)
+            .then(setLatestCoffees)
+    }, [])
+
+    return {
+        latestCoffees
+    }
 }
 

@@ -10,7 +10,7 @@ import CommentsCreate from "../../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { userId, email, username } = useAuth();
+    const { userId, username } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
@@ -34,7 +34,6 @@ export default function Details() {
         // TODO: try/catch
         const newComment = await create(coffeeId, comment);
 
-        //addComment(state => [...state, newComment]);
         addComment({ ...newComment, author: { username } })
     };
 
@@ -59,7 +58,6 @@ export default function Details() {
                                 <p className="lorem_text"><strong>Caffeine: </strong> {coffee.caffeine_mg}mg</p>
                                 <p className="lorem_text"><strong>Size: </strong> {coffee.serving_size_ml}ml</p>
                                 <p className="lorem_text"><strong>Added on: </strong>{moment(coffee._createdOn).format('LL')}</p>
-                                <CommentsView comments={comments} />
 
                             </div>
                             {isOwner
@@ -72,18 +70,16 @@ export default function Details() {
                                 : (
                                     <div>
                                         <LikeButton />
-                                        <CommentsCreate
-                                            username={username}
-                                            email={email}
-                                            coffeeId={coffeeId}
-                                            onCreate={commentCreateHandler}
-                                        />
                                     </div>
                                 )
                             }
                         </div>
-
                     </div>
+                </div>
+                <div>
+                    <CommentsView comments={comments} />
+
+                    <CommentsCreate onCreate={commentCreateHandler} />
                 </div>
             </div>
         </div>

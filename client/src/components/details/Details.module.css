@@ -1,7 +1,5 @@
-.coffee-details {   
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ .coffee-details {  
+    display: flex; 
     background-color: aliceblue;
 }
 
@@ -13,5 +11,5 @@
 
 .details-btn {
 display: flex;
-}
+} 
 
