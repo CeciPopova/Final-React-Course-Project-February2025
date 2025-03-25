@@ -1,12 +1,11 @@
-import { useContext } from 'react';
 import styles from './Navigation.module.css'
 
 import { Link } from "react-router-dom";
-import { UserContext } from '../../contexts/UserContext';
+import useAuth from '../../hooks/useAuth';
 
 export default function Navigation() {
 
-    const { email } = useContext(UserContext);
+    const { isAuthenticated, email } = useAuth();
 
     return (
         <div className="container">
@@ -32,7 +31,7 @@ export default function Navigation() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/blog">Blog</Link>
                         </li>
-                        {email
+                        {isAuthenticated
 
                             ? (<li className="nav-item">
                                 <Link className="nav-link" to="/create">Create</Link>
@@ -43,7 +42,7 @@ export default function Navigation() {
 
 
                     <form className="form-inline my-2 my-lg-0">
-                        {!email
+                        {!isAuthenticated
                             ? (<div className="login_bt">
                                 <ul>
                                     <li><Link to="/login"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Login</Link></li>
