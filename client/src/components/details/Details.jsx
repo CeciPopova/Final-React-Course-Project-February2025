@@ -10,12 +10,12 @@ import CommentsCreate from "../../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { _id, username } = useAuth();
+    const { _id, email } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
     const { deleteCoffee } = useDeleteCoffee();
-    const { comments, addComment } = useComments(coffeeId);
+    const { comments, addComment} = useComments(coffeeId);
     const { create } = useCreateComment();
 
     const coffeeDeleteClickHandler = async () => {
@@ -30,16 +30,11 @@ export default function Details() {
         navigate('/catalog');
     }
 
-    const commentCreateHandler = async (formData) => {
-        const comment = formData.get('comment');
+    const commentCreateHandler = async (comment) => {
+// TODO: try/catch
+        const newComment = await create(coffeeId, comment);
 
-
-
-        // Server update
-        const commentResult = await create(coffeeId, comment);
-
-        // Local state update
-        addComment({ ...commentResult, author: { username } })
+        addComment(state => [...state, newComment]);
     };
 
 
@@ -78,7 +73,11 @@ export default function Details() {
                                 : (
                                     <div>
                                         <LikeButton />
-                                        <CommentsCreate />
+                                        <CommentsCreate 
+                                          email={email}
+                                          coffeeId={coffeeId}
+                                          onCreate={commentCreateHandler}
+                                        />
                                     </div>
                                 )
                             }
