@@ -5,8 +5,8 @@ import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
 import useAuth from "../../hooks/useAuth";
 import LikeButton from "./Likebutton";
-import CommentsView from "../../coments-show/CommentsShow";
-import CommentsCreate from "../../comments-create/CommentsCreate";
+import CommentsView from "../coments-show/CommentsShow";
+import CommentsCreate from "../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
@@ -38,6 +38,7 @@ export default function Details() {
     };
 
     const isOwner = userId === coffee._ownerId;
+    console.log(coffee.image);
 
     return (
         <div className="details-container">

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLatestCoffees } from '../../api/coffeeApi'
 import './Blog.css'
 import moment from 'moment';
@@ -32,18 +33,9 @@ export default function Blog() {
                                     </div>
 
                                 </div>
-                                <div className="read_btn"><a href="#">Read More</a></div>
+                                <div className="read_btn"><Link to="/catalog">Discover More Coffees</Link></div>
                             </div>)
                         )}
-                        {/* <div className="col-md-6">
-                            <div className="blog_box">
-                                <div className="blog_img"><img src="images/blog-img2.png" /></div>
-                                <h4 className="date_text">05 April</h4>
-                                <h4 className="prep_text">Enjoy Best Coffee</h4>
-                                <p className="lorem_text">distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a moredistracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more</p>
-                            </div>
-                            <div className="read_btn"><a href="#">Read More</a></div>
-                        </div> */}
                     </div>
                 </div>
             </div>
