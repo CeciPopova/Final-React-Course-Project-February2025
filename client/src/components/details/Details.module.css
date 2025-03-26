@@ -15,6 +15,13 @@
     position: relative;
     padding: 15px;
 }
+
+.blog_img {
+    max-width: 300px;
+    height: 300px;
+    text-align: center;
+}
+
 .button {
     width: 100%;
     float: left;
@@ -43,4 +50,11 @@ read_btn {
     border: 1px solid #f01c1c;
     text-transform: uppercase;
     padding: 8px;
+}
+
+.strong {
+    font-weight: 600;
+}
+.strong:hover {
+    color: red;
 }

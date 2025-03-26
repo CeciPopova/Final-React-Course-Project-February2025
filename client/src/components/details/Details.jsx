@@ -10,7 +10,7 @@ import CommentsCreate from "../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function Details() {
-    const { userId, username } = useAuth();
+    const { userId, username, isAuthenticated } = useAuth();
     const { coffeeId } = useParams();
     const navigate = useNavigate();
     const { coffee } = useCoffee(coffeeId);
@@ -43,7 +43,7 @@ export default function Details() {
         <div className="details-container">
             <div className={styles["coffee-details"]}>
                 <div className={styles["details-img"]}>
-                    <div className="blog_img">
+                    <div className={styles["blog_img"]}>
                         <img src={coffee.image} />
                     </div>
                     <h4 className="date_text">Price: {coffee.price}$</h4>
@@ -79,8 +79,10 @@ export default function Details() {
 
                 <div>
                     <CommentsView comments={comments} />
-
-                    <CommentsCreate onCreate={commentCreateHandler} />
+                    {isAuthenticated
+                        ? <CommentsCreate onCreate={commentCreateHandler} />
+                        : <strong  ><Link to="/login" className={styles["strong"]}>  Login here to comment!</Link></strong>
+                    }
                 </div>
             </div>
         </div>
