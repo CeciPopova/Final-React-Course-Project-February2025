@@ -45,7 +45,7 @@ button {
     gap: 10px;
 }
 
-strong {
+.strong {
     font-weight: 600;
 }
 
