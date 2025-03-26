@@ -1,0 +1,6 @@
+.comment {
+    background-color: rgb(159, 158, 158);
+    color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0.1);
+}

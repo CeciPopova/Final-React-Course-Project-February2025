@@ -1,15 +1,46 @@
  .coffee-details {  
     display: flex; 
+    
+    text-align: center;
     background-color: aliceblue;
+    padding: 30px 100px 0 100px;
 }
 
-
+.details-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .details-img {
     position: relative;
     padding: 15px;
 }
+.button {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #f01c1c;
+    text-transform: uppercase;
+    padding: 8px;
+}
 
-.details-btn {
-display: flex;
-} 
+@media (min-width: 768px) {
+    .col-md-6 {
+        max-width: 30%;
+    }
+}
 
+read_btn {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #f01c1c;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #f01c1c;
+    text-transform: uppercase;
+    padding: 8px;
+}

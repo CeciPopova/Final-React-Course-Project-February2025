@@ -1,14 +1,16 @@
+import styles from './Comment-Show.module.css'
+
 export default function CommentsView({
     comments,
 }) {
     return (
         <div className="details-comments">
-            <h2>Comments:</h2>
+            <h2 className="prep_text">Comments:</h2>
             <ul>
                  {comments.length > 0 
-                    ? comments.map(({ _id, comment, pending, author }) => (
-                        <li key={_id} className="comment" style={{ backgroundColor: pending ? 'lightgray' : '' }} >
-                            <p>{author.username}: {comment}</p>
+                    ? comments.map(({ _id, comment, author }) => (
+                        <li key={_id} className={styles["comment"]} >
+                            <p><strong>{author.username}</strong>: {comment}</p>
                         </li>
                     ))
                     : <p className="no-comment">No comments.</p>

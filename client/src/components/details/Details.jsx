@@ -38,7 +38,6 @@ export default function Details() {
     };
 
     const isOwner = userId === coffee._ownerId;
-    console.log(coffee.image);
 
     return (
         <div className="details-container">
@@ -52,7 +51,7 @@ export default function Details() {
 
                 <div className="col-md-6">
                     <div className="details_box">
-                        <div className="details-text">
+                        <div className={styles["details-text"]}>
                             <h4 className="prep_text">{coffee.name}</h4>
                             <div>
                                 <p className="lorem_text"><strong>ingredients: </strong> {coffee.ingredients}</p>
@@ -65,7 +64,7 @@ export default function Details() {
                                 ?
                                 (<div className={styles["details-btn"]}>
                                     <div className="read_btn"><Link className="button" to={`/coffees/${coffee._id}/edit`}>Edit</Link></div>
-                                    <div className="read_btn"><button className="button" onClick={coffeeDeleteClickHandler}>Delete</button></div>
+                                    <div className="read_btn"><button className={styles["button"]} onClick={coffeeDeleteClickHandler}>Delete</button></div>
                                 </div>)
 
                                 : (
@@ -77,6 +76,7 @@ export default function Details() {
                         </div>
                     </div>
                 </div>
+
                 <div>
                     <CommentsView comments={comments} />
 

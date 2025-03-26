@@ -6,7 +6,6 @@ const baseUrl = 'http://localhost:3030/data/comments';
 
 function commentsReducer(state, action) {
 
-    console.log(state);
     switch (action.type) {
         case 'ADD_COMMENT':
             return [...state, action.payload]

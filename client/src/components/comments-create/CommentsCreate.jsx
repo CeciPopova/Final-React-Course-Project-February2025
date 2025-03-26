@@ -1,3 +1,5 @@
+import styles from './CommentsCreate.module.css'
+
 export default function CommentsCreate({ 
     onCreate,
 }) {
@@ -8,10 +10,10 @@ export default function CommentsCreate({
     }
     return (
         <article className="create-comment">
-            <label>Add new comment:</label>
+            
             <form className="form" action={commentAction}>
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input className="btn submit" type="submit" value="Add Comment" />
+                <textarea className={styles["comment-text"]} name="comment" placeholder="Add New Comment......"></textarea>
+                <div className={styles["read_btn"]}><input className={styles["button"]} type="submit" value="Add Comment" /></div>
             </form>
         </article>
     );

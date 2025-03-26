@@ -12,7 +12,7 @@ export default function Blog() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <h1 className="about_taital">Latest Coffee Drinks</h1>
+                        <h1 className="about_taital">Last Added Coffee Drinks</h1>
                     </div>
                 </div>
                 <div className="blog_section_2">
