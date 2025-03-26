@@ -26,7 +26,7 @@ export default function Navigation() {
                             <Link className="nav-link" to="/catalog">Coffees</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/shop">Shop</Link>
+                            <Link className="nav-link" to="/google">Location</Link>
                         </li>
                         {isAuthenticated
 

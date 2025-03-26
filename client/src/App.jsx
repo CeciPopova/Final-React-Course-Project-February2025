@@ -10,10 +10,10 @@ import Details from './components/details/Details'
 import Catalog from './components/catalog/Catalog'
 import Logout from './components/logout/Logout'
 import Create from './components/create/Create'
-import Shop from './components/shop/Shop'
 import Edit from './components/edit/Edit'
 import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
+import GoogleMapComponent from './components/location/Location'
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/coffees/:coffeeId/details' element={<Details />} />
             <Route path='/logout' element={<Logout />} />
-            <Route path='/shop' element={<Shop />} />
+            <Route path='/google' element={<GoogleMapComponent />} />
           </Routes>
         </div>
         <Footer />
