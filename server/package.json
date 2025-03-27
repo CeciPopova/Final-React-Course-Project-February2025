@@ -1,0 +1,11 @@
+{
+  "name": "softuni-practice-server",
+  "version": "1.0.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
