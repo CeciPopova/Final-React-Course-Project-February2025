@@ -1417,7 +1417,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "240",
                 "price": "4.75",
-                "image": "../../../public/images/Latte.avif",
+                "image": "/images/Latte.avif",
                 "_createdOn": 1742740333261,
                 "_id": "44657380-4197-4237-b11a-acf760ac959d"
             },
@@ -1428,7 +1428,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "30",
                 "price": "2",
-                "image": "../../../public/images/img-1.png",
+                "image": "/images/img-1.png",
                 "_createdOn": 1742741433408,
                 "_id": "4ca10324-4535-4292-b864-c7480cd3a507"
             },
@@ -1439,7 +1439,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "150",
                 "price": "5",
-                "image": "../../../public/images/img-4.png",
+                "image": "/images/img-4.png",
                 "_createdOn": 1742741717884,
                 "_id": "a8175108-1138-4471-ba88-b43c0d0de6e9"
             },
@@ -1449,7 +1449,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "120",
                 "price": "3",
-                "image": "../../../public/images/amerikano.png",
+                "image": "/images/amerikano.png",
                 "_id": "313ab2b3-8baf-4482-a845-dbe3e33b0ac5",
                 "_createdOn": 1742932402769,
                 "_ownerId": "c747e304-8bba-418a-b456-c3c2dca874f1"
@@ -1460,7 +1460,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "240",
                 "price": "5.25",
-                "image": "../../../public/images/mocha-1.png",
+                "image": "/images/mocha-1.png",
                 "_id": "e732f309-59bf-4a4a-9840-82c79a8e6cf7",
                 "_createdOn": 1742934271328,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db"
@@ -1472,7 +1472,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "90",
                 "price": "4.25",
-                "image": "../../../public/images/Macchiato.png",
+                "image": "/images/Macchiato.png",
                 "_createdOn": 1742935143199,
                 "_id": "e9cb4f0a-e900-4a9e-adc4-c164f0d4dbd0"
             },
@@ -1483,7 +1483,7 @@
                 "caffeine_mg": "200",
                 "serving_size_ml": "300",
                 "price": "5.00",
-                "image": "../../../public/images/Cold-Brew.avif",
+                "image": "/images/Cold-Brew.avif",
                 "_createdOn": 1742935509828,
                 "_id": "3353c087-8e80-4de7-a6cd-445480907319"
             },
@@ -1493,7 +1493,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "300",
                 "price": "5.25",
-                "image": "../../../public/images/iced-latte.png",
+                "image": "/images/iced-latte.png",
                 "_id": "75b44d14-893d-4f81-91aa-cef777dd783a",
                 "_createdOn": 1742936079481,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
@@ -1505,7 +1505,7 @@
                 "caffeine_mg": "64",
                 "serving_size_ml": "120",
                 "price": "5.50",
-                "image": "../../../public/images/affogato.webp",
+                "image": "/images/affogato.webp",
                 "_createdOn": 1742937387561,
                 "_id": "282a3d35-6c6c-47a4-a216-8061a54abb79"
             },
@@ -1515,7 +1515,7 @@
                 "caffeine_mg": "60",
                 "serving_size_ml": "250",
                 "price": "5.50",
-                "image": "../../../public/images/iced-matcha-latte.webp",
+                "image": "/images/iced-matcha-latte.webp",
                 "_id": "55334b15-fb0a-45e2-844b-869a623074a5",
                 "_createdOn": 1742938299497,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
