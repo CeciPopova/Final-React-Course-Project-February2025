@@ -1,22 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function LikeButton() {
-    const [likes, setLikes] = useState(0);
-    const [liked, setLiked] = useState(false);
+export default function LikeButton({
+  likes,  // Receiving likes as a prop
+}) {
+  console.log("Initial likes:", likes);
 
+  // Initialize state with the likes prop
+  const [like, setLike] = useState(likes);
+  const [liked, setLiked] = useState(false);
 
-    const handleLike = () => {
+  useEffect(() => {
+    // Sync the like state with the initial likes prop on mount
+    setLike(likes);
+  }, [likes]); // This will update the state if the likes prop changes
 
-        if (!liked) {
-            setLikes(likes + 1);
-            setLiked(true);
-        }
+  const handleLike = () => {
+    if (!liked) {
+      setLike(like + 1);  // Increment like count
+      setLiked(true);  // Mark as liked
     }
+  };
 
-    return (
-        <div className="details-btn">
-            <div className="read_btn"><button onClick={handleLike} disabled={liked}>{liked ? "Liked" : "Like"} {likes}</button></div>
-        </div>
-
-    )
+  return (
+    <div className="details-btn">
+      <div className="read_btn">
+        {/* Use `like` state to show updated like count */}
+        <button onClick={handleLike} disabled={liked}>
+          {liked ? "❤️ Liked" : "👍 Like"} {like} {/* Updated like count */}
+        </button>
+      </div>
+    </div>
+  );
 }

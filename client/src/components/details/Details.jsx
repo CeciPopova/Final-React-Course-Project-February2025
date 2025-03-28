@@ -18,6 +18,8 @@ export default function Details() {
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
+    console.log(coffee.likes);
+
     const coffeeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to delete ${coffee.name} coffee?`);
 
@@ -69,7 +71,7 @@ export default function Details() {
 
                                 : (
                                     <div>
-                                        <LikeButton />
+                                        <LikeButton likes={coffee.likes}/>
                                     </div>
                                 )
                             }

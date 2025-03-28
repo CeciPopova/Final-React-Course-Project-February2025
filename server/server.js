@@ -1419,6 +1419,7 @@
                 "price": "4.75",
                 "image": "/images/Latte.avif",
                 "_createdOn": 1742740333261,
+                "likes": 4,
                 "_id": "44657380-4197-4237-b11a-acf760ac959d"
             },
             {
@@ -1430,6 +1431,7 @@
                 "price": "2",
                 "image": "/images/img-1.png",
                 "_createdOn": 1742741433408,
+                "likes": 7,
                 "_id": "4ca10324-4535-4292-b864-c7480cd3a507"
             },
             {
@@ -1441,6 +1443,7 @@
                 "price": "5",
                 "image": "/images/img-4.png",
                 "_createdOn": 1742741717884,
+                "likes": 9,
                 "_id": "a8175108-1138-4471-ba88-b43c0d0de6e9"
             },
             {
@@ -1452,6 +1455,7 @@
                 "image": "/images/amerikano.png",
                 "_id": "313ab2b3-8baf-4482-a845-dbe3e33b0ac5",
                 "_createdOn": 1742932402769,
+                "likes": 2,
                 "_ownerId": "c747e304-8bba-418a-b456-c3c2dca874f1"
             },
             {
@@ -1463,6 +1467,7 @@
                 "image": "/images/mocha-1.png",
                 "_id": "e732f309-59bf-4a4a-9840-82c79a8e6cf7",
                 "_createdOn": 1742934271328,
+                "likes": 29,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db"
             },
             {
@@ -1474,6 +1479,7 @@
                 "price": "4.25",
                 "image": "/images/Macchiato.png",
                 "_createdOn": 1742935143199,
+                "likes": 12,
                 "_id": "e9cb4f0a-e900-4a9e-adc4-c164f0d4dbd0"
             },
             {
@@ -1485,6 +1491,7 @@
                 "price": "5.00",
                 "image": "/images/Cold-Brew.avif",
                 "_createdOn": 1742935509828,
+                "likes": 6,
                 "_id": "3353c087-8e80-4de7-a6cd-445480907319"
             },
             {
@@ -1496,6 +1503,7 @@
                 "image": "/images/iced-latte.png",
                 "_id": "75b44d14-893d-4f81-91aa-cef777dd783a",
                 "_createdOn": 1742936079481,
+                "likes": 21,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
             },
             {
@@ -1507,6 +1515,7 @@
                 "price": "5.50",
                 "image": "/images/affogato.webp",
                 "_createdOn": 1742937387561,
+                "likes": 28,
                 "_id": "282a3d35-6c6c-47a4-a216-8061a54abb79"
             },
             {
@@ -1518,6 +1527,7 @@
                 "image": "/images/iced-matcha-latte.webp",
                 "_id": "55334b15-fb0a-45e2-844b-869a623074a5",
                 "_createdOn": 1742938299497,
+                "likes": 7,
                 "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
             }
 
