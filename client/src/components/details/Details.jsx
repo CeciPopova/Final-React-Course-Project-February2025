@@ -18,7 +18,7 @@ export default function Details() {
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
-    console.log(coffee.likes);
+    //console.log(coffee.likes);
 
     const coffeeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to delete ${coffee.name} coffee?`);
@@ -42,11 +42,16 @@ export default function Details() {
     const isOwner = userId === coffee._ownerId;
 
     return (
-        <div className="details-container">
+        <div className={styles["details-container"]}>
+            <div className="row">
+                <div className="col-md-12">
+                    <h1 className="about_taital">Details</h1>
+                </div>
+            </div>
             <div className={styles["coffee-details"]}>
                 <div className={styles["details-img"]}>
                     <div className={styles["blog_img"]}>
-                        <img src={coffee.image} />
+                        <img className={styles["image"]} src={coffee.image} />
                     </div>
                     <h4 className="date_text">Price: {coffee.price}$</h4>
                 </div>
@@ -71,16 +76,18 @@ export default function Details() {
 
                                 : (
                                     <div>
-                                        <LikeButton likes={coffee.likes}/>
+                                        <LikeButton likes={coffee.likes} />
                                     </div>
                                 )
                             }
+
                         </div>
+                        <CommentsView comments={comments} />
                     </div>
                 </div>
 
-                <div>
-                    <CommentsView comments={comments} />
+                <div className={styles["comments"]}>
+
                     {isAuthenticated
                         ? <CommentsCreate onCreate={commentCreateHandler} />
                         : <strong  ><Link to="/login" className={styles["strong"]}>  Login here to comment!</Link></strong>
