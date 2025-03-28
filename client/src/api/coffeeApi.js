@@ -7,7 +7,7 @@ const baseUrl = 'http://localhost:3030/data/coffees';
 
 export const useCoffees = () => {
     const [coffees, setCoffees] = useState([]);
-    console.log("API URL:", import.meta.env.VITE_API_URL);
+   // console.log("API URL:", import.meta.env.VITE_API_URL);
 
     useEffect(() => {
         request.get(baseUrl)
