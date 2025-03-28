@@ -10,7 +10,7 @@ export default function CommentsView({
                  {comments.length > 0 
                     ? comments.map(({ _id, comment, author }) => (
                         <li key={_id} className={styles["comment"]} >
-                            <p><strong>{author.username}</strong>: {comment}</p>
+                            <p><strong>{author.email}</strong>: {comment}</p>
                         </li>
                     ))
                     : <p className="no-comment">No comments.</p>

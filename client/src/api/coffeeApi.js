@@ -3,7 +3,9 @@ import request from "../utils/requester"
 import { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 
-const baseUrl = 'http://localhost:3030/data/coffees';
+//const baseUrl = 'http://localhost:3030/data/coffees';
+const baseUrl = 'https://softuni-practice-server-f4y1.onrender.com/data/coffees';
+
 
 export const useCoffees = () => {
     const [coffees, setCoffees] = useState([]);

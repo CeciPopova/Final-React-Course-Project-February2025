@@ -2,7 +2,9 @@ import { useEffect, useReducer } from "react";
 import useAuth from "../hooks/useAuth";
 import request from "../utils/requester";
 
-const baseUrl = 'http://localhost:3030/data/comments';
+//const baseUrl = 'http://localhost:3030/data/comments';
+const baseUrl = 'https://softuni-practice-server-f4y1.onrender.com/data/comments';
+
 
 function commentsReducer(state, action) {
 
