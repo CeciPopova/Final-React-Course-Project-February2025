@@ -38,7 +38,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <p className="copyright_text">2025 All Rights Reserved. Final Course Project <Link to="" >Ceci Popova GitHub</Link></p>
+                        <p className="copyright_text"><Link to="">Coffee Lovers</Link>2025 Final Course Project <Link to="https://github.com/CeciPopova" >Ceci Popova GitHub</Link></p>
                     </div>
                 </div>
             </div>
