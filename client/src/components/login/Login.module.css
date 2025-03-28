@@ -52,3 +52,9 @@ button {
 .strong:hover {
     color: red;
 }
+
+.error_message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

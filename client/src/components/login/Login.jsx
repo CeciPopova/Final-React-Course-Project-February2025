@@ -1,27 +1,29 @@
-import { Link, useNavigate } from 'react-router-dom'
-import styles from './Login.module.css'
-import { useActionState } from 'react';
-import { useLogin } from '../../api/authApi';
-import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import styles from './Login.module.css';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-
+import { useLogin } from '../../api/authApi';
 
 export default function Login() {
     const navigate = useNavigate();
-    const {userLoginHandler} = useContext(UserContext)
-    const { login } = useLogin();
+    const { userLoginHandler } = useContext(UserContext);
+    const { login, loading, error } = useLogin();
+    
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const loginHandler = async (previousState, formData) => {
-        const values = Object.fromEntries(formData);
+    const loginHandler = async (event) => {
+        event.preventDefault();  // Prevent the default form submission
 
-        const authData = await login(values.email, values.password);
-
-        userLoginHandler(authData);
-
-        navigate('/catalog');
-    }
-    const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
-
+        try {
+            // Call the login API using the custom hook
+            const authData = await login(email, password);
+            userLoginHandler(authData);  // Update the user context
+            navigate('/catalog');  // Redirect to catalog page after successful login
+        } catch (err) {
+            console.error('Login failed:', err);
+        }
+    };
 
     return (
         <div className={styles["login_section"]}>
@@ -37,26 +39,58 @@ export default function Login() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className={styles["login_form"]} action={loginAction}>
+                                <form
+                                    className={styles["login_form"]}
+                                    onSubmit={loginHandler}  // Submit the form using the login handler
+                                >
                                     <div className={styles["input_group"]}>
-                                        <input className="mail_text" type="email" placeholder="Your Email" name="email" />
+                                        <input
+                                            className="mail_text"
+                                            type="email"
+                                            placeholder="Your Email"
+                                            name="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}  // Update email state
+                                            required
+                                        />
                                     </div>
                                     <div className={styles["input_group"]}>
-                                        <input type="password" className="mail_text" placeholder="Your Password" name="password" />
+                                        <input
+                                            type="password"
+                                            className="mail_text"
+                                            placeholder="Your Password"
+                                            name="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}  // Update password state
+                                            required
+                                        />
                                     </div>
+
+                                    {/* Error message display */}
+                                    {error && <div className={styles["error_message"]}>{error}</div>}
+
                                     <div className={styles["send_bt"]}>
-                                        <button type="submit" disabled={isPending}>Login</button>
+                                        <button type="submit" disabled={loading}>
+                                            {loading ? "Logging in..." : "Login"}
+                                        </button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+
             <div>
-                <p>Don&apos;t have an acount?  <strong><Link to="/register" className={styles["strong"]} > Click here for Register!</Link></strong></p>
+                <p>
+                    Don&apos;t have an account?{" "}
+                    <strong>
+                        <Link to="/register" className={styles["strong"]}>
+                            Click here to Register!
+                        </Link>
+                    </strong>
+                </p>
             </div>
         </div>
-    )
+    );
 }

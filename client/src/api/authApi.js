@@ -6,14 +6,28 @@ import { useEffect } from 'react';
 const baseUrl = 'http://localhost:3030/users';
 
 export const useLogin = () => {
-    const login = (email, password) => {
-        const result = request.post(`${baseUrl}/login`, { email, password });
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-        return result;
+    const login = (email, password) => {
+        setLoading(true);
+        setError(null);  // Reset previous errors
+        try {
+            const result = request.post(`${baseUrl}/login`, { email, password });
+
+            return result;
+
+        } catch (err) {
+            setError(err.message);
+            throw err;
+
+        } finally {
+            setLoading(false);
+        }
     }
 
     return {
-        login,
+        login, loading, error,
     }
 }
 
@@ -28,6 +42,7 @@ export const useRegister = () => {
         try {
             return request.post(`${baseUrl}/register`, { email, password });
         } catch (err) {
+
             setError(err.message);
             throw err;
         } finally {
