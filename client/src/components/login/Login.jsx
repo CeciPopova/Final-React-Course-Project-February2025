@@ -8,12 +8,23 @@ export default function Login() {
     const navigate = useNavigate();
     const { userLoginHandler } = useContext(UserContext);
     const { login, loading, error } = useLogin();
-    
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [formError, setFormError] = useState("");  // Form validation error
 
+    // Login handler
     const loginHandler = async (event) => {
         event.preventDefault();  // Prevent the default form submission
+
+        // Reset previous errors
+        setFormError("");
+
+        // Simple form validation: Check if email and password are provided
+        if (!email || !password) {
+            setFormError("Please enter both email and password.");
+            return;
+        }
 
         try {
             // Call the login API using the custom hook
@@ -22,6 +33,7 @@ export default function Login() {
             navigate('/catalog');  // Redirect to catalog page after successful login
         } catch (err) {
             console.error('Login failed:', err);
+            setFormError("Invalid email or password. Please try again.");  // Show a user-friendly error message
         }
     };
 
@@ -66,7 +78,10 @@ export default function Login() {
                                         />
                                     </div>
 
-                                    {/* Error message display */}
+                                    {/* Display form validation error */}
+                                    {formError && <div className={styles["error_message"]}>{formError}</div>}
+
+                                    {/* Display API error if any */}
                                     {error && <div className={styles["error_message"]}>{error}</div>}
 
                                     <div className={styles["send_bt"]}>
