@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 export default function Footer() {
@@ -37,8 +38,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <p className="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a>
-                            Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
+                        <p className="copyright_text">2025 All Rights Reserved. Final Course Project <Link to="" >Ceci Popova GitHub</Link></p>
                     </div>
                 </div>
             </div>
