@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 
 export default function LikeButton({
-  likes,  // Receiving likes as a prop
+  likes,  
 }) {
-  console.log("Initial likes:", likes);
+  //console.log("Initial likes:", likes);
 
-  // Initialize state with the likes prop
   const [like, setLike] = useState(likes);
   const [liked, setLiked] = useState(false);
 
@@ -16,8 +15,8 @@ export default function LikeButton({
 
   const handleLike = () => {
     if (!liked) {
-      setLike(like + 1);  // Increment like count
-      setLiked(true);  // Mark as liked
+      setLike(like + 1); 
+      setLiked(true); 
     }
   };
 
