@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import request from '../utils/requester';
 import { UserContext } from '../contexts/UserContext';
 import { useEffect } from 'react';
@@ -18,12 +18,26 @@ export const useLogin = () => {
 }
 
 export const useRegister = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+
     const register = (email, password) => {
-        return request.post(`${baseUrl}/register`, { email, password });
+        setLoading(true);
+        setError(null);
+        try {
+            return request.post(`${baseUrl}/register`, { email, password });
+        } catch (err) {
+            setError(err.message);
+            throw err;
+        } finally {
+            setLoading(false)
+        }
+
     };
 
     return {
-        register,
+        register, loading, error,
     }
 }
 
@@ -34,7 +48,7 @@ export const useLogout = () => {
         if (!accessToken) {
             return;
         }
-        
+
         const options = {
             headers: {
                 'X-Authorization': accessToken
