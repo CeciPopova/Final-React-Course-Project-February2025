@@ -3,11 +3,23 @@ import styles from './CommentsCreate.module.css'
 export default function CommentsCreate({ 
     onCreate,
 }) {
-    const commentAction = async (formData) => {
-        const comment = formData.get('comment');
 
-        onCreate(comment);
-    }
+    const commentAction = async (formData) => {
+        const comment = formData.get('comment').trim();
+    
+        if (!comment) {
+            alert("Comment cannot be empty!");
+            return;
+        }
+    
+        try {
+            await onCreate(comment);
+        } catch (error) {
+            console.error("Failed to create comment:", error);
+            alert("Error: Could not add your comment. Please try again.");
+        }
+    };
+    
     return (
         <article className="create-comment">
             
