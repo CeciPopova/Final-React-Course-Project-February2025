@@ -20,23 +20,33 @@ export default function Details() {
 
     //console.log(coffee.likes);
 
-    const coffeeDeleteClickHandler = async () => {
-        const hasConfirm = confirm(`Do you want to delete ${coffee.name} coffee?`);
-
-        if (!hasConfirm) {
-            return;
-        }
-
-        await deleteCoffee(coffeeId);
-
-        navigate('/catalog');
+    if (!coffee) {
+        return <p>Loading coffee details...</p>;
     }
 
-    const commentCreateHandler = async (comment) => {
-        // TODO: try/catch
-        const newComment = await create(coffeeId, comment);
 
-        addComment({ ...newComment, author: { username } })
+    const coffeeDeleteClickHandler = async () => {
+       const hasConfirm = confirm(`Do you want to delete ${coffee?.name || "this"} coffee?`);
+
+        if (!hasConfirm) return;
+
+        try {
+            await deleteCoffee(coffeeId);
+            navigate('/catalog');
+        } catch (error) {
+            console.error("Failed to delete coffee:", error);
+            alert("Error: Could not delete coffee. Please try again later.");
+        }
+    };
+
+    const commentCreateHandler = async (comment) => {
+        try {
+            const newComment = await create(coffeeId, comment);
+            addComment({ ...newComment, author: { username } });
+        } catch (error) {
+            console.error("Failed to create comment:", error);
+            alert("Error: Could not add your comment. Please try again.");
+        }
     };
 
     const isOwner = userId === coffee._ownerId;
@@ -51,7 +61,7 @@ export default function Details() {
             <div className={styles["coffee-details"]}>
                 <div className={styles["details-img"]}>
                     <div className={styles["blog_img"]}>
-                        <img className={styles["image"]} src={coffee.image} />
+                    <img className={styles["image"]} src={coffee?.image} alt={coffee?.name || "Coffee Image"} />
                     </div>
                     <h4 className="date_text">Price: {coffee.price}$</h4>
                 </div>
@@ -64,7 +74,7 @@ export default function Details() {
                                 <p className="lorem_text"><strong>ingredients: </strong> {coffee.ingredients}</p>
                                 <p className="lorem_text"><strong>Caffeine: </strong> {coffee.caffeine_mg}mg</p>
                                 <p className="lorem_text"><strong>Size: </strong> {coffee.serving_size_ml}ml</p>
-                                <p className="lorem_text"><strong>Added on: </strong>{moment(coffee._createdOn).format('LL')}</p>
+                                <p className="lorem_text"><strong>Added on: </strong>{moment(coffee?._createdOn).format('LL')}</p>
 
                             </div>
                             {isOwner
