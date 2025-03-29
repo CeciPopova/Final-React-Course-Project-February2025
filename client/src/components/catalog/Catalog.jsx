@@ -4,6 +4,11 @@ import './Catalog.css'
 
 export default function Catalog() {
     const { coffees } = useCoffees();
+
+    if (!coffees) {
+        return <h1>Loading coffees...</h1>;
+    }
+
     return (
         <div className="coffee_section layout_padding">
             <div className="container">
