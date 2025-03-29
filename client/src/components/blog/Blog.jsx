@@ -6,6 +6,10 @@ import moment from 'moment';
 export default function Blog() {
 
     const { latestCoffees } = useLatestCoffees();
+    if (!latestCoffees) {
+        return <h1>Loading latest coffees...</h1>;
+    }
+
 
     return (
         <div className="blog_section layout_padding">
@@ -33,7 +37,12 @@ export default function Blog() {
                                     </div>
 
                                 </div>
-                                <div className="read_btn"><Link to="/catalog">Discover More Coffees</Link></div>
+                                {latestCoffees.length > 0 && (
+                                    <div className="read_btn">
+                                        <Link to="/catalog">Discover More Coffees</Link>
+                                    </div>
+                                )}
+
                             </div>)
                         )}
                     </div>
