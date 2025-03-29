@@ -11,16 +11,25 @@ export default function Edit() {
     const { edit } = useEditCoffee();
     const { coffee } = useCoffee(coffeeId);
 
-
-
-    const formAction = async (formData) => {
-        const coffeeData = Object.fromEntries(formData);
-
-        await edit(coffeeId, coffeeData);
-
-        navigate(`/coffees/${coffeeId}/details`);
+    if (!coffee) {
+        return <h1>Loading coffee data...</h1>;
     }
+    
 
+    const formSubmitHandler = async (event) => {
+        event.preventDefault(); // Prevent page refresh
+        const formData = new FormData(event.target);
+        const coffeeData = Object.fromEntries(formData);
+    
+        try {
+            await edit(coffeeId, coffeeData);
+            navigate(`/coffees/${coffeeId}/details`);
+        } catch (error) {
+            console.error("Failed to edit coffee:", error);
+            alert("Error editing coffee. Please try again.");
+        }
+    };
+    
 
     const isOwner = userId === coffee._ownerId;
     if (!isOwner) {
@@ -40,7 +49,7 @@ export default function Edit() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mail_section_1">
-                                <form className={styles["create_form"]} action={formAction} >
+                                <form className={styles["create_form"]} onSubmit={formSubmitHandler} >
                                     <div>
                                         <div className={styles['input_group']}>
                                             <input className="mail_text" type="text" defaultValue={coffee.name} name="name" />
