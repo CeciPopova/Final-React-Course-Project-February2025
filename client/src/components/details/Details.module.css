@@ -25,11 +25,12 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px 0 rgb(0, 0, 0.1);
-    height: 300px;
+    height: 200px;
     background-color: rgb(229, 229, 229);
+
 }
 .blog_img {
-    max-width: 350px;
+    max-width: 300px;
     height: 300px;
     border-radius: 5px;
     text-align: center;

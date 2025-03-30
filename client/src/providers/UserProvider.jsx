@@ -7,6 +7,7 @@ export default function UserProvider({
 
     const [authData, setAuthData] = usePersistedState('auth', {});
 
+
     const userLoginHandler = (resultData) => {
       setAuthData(resultData);
     };
@@ -14,6 +15,7 @@ export default function UserProvider({
     const userLogoutHandler = () => {
       setAuthData({});
     }
+    
     return (
         <UserContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler}} >
             {children}

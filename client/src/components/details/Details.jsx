@@ -4,10 +4,11 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
 import useAuth from "../../hooks/useAuth";
-import LikeButton from "./Likebutton";
+import LikeButton from "../likeButton/Likebutton";
 import CommentsView from "../coments-show/CommentsShow";
 import CommentsCreate from "../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
+import { useEffect, useState } from 'react';
 
 export default function Details() {
     const { userId, username, isAuthenticated } = useAuth();
@@ -17,22 +18,33 @@ export default function Details() {
     const { deleteCoffee } = useDeleteCoffee();
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
+    const [likes, setLikes] = useState(() => coffee?.likes ?? 0);
 
-    //console.log(coffee.likes);
+    useEffect(() => {
+        if (coffee && typeof coffee.likes === "number") {
+            setLikes(coffee.likes);  // Update likes only when data is available
+        }
+    }, [coffee]);
+    
 
     if (!coffee) {
         return <p>Loading coffee details...</p>;
     }
 
+    //console.log("Details Page - coffeeId from useParams:", coffeeId);
+
+    const handleLikeUpdate = (newLikes) => {
+        setLikes(newLikes);
+    };
 
     const coffeeDeleteClickHandler = async () => {
-       const hasConfirm = confirm(`Do you want to delete ${coffee?.name || "this"} coffee?`);
+        const hasConfirm = confirm(`Do you want to delete ${coffee?.name || "this"} coffee?`);
 
         if (!hasConfirm) return;
 
         try {
             await deleteCoffee(coffeeId);
-            navigate('/catalog');
+            navigate('/coffees');
         } catch (error) {
             console.error("Failed to delete coffee:", error);
             alert("Error: Could not delete coffee. Please try again later.");
@@ -61,7 +73,7 @@ export default function Details() {
             <div className={styles["coffee-details"]}>
                 <div className={styles["details-img"]}>
                     <div className={styles["blog_img"]}>
-                    <img className={styles["image"]} src={coffee?.image} alt={coffee?.name || "Coffee Image"} />
+                        <img className={styles["image"]} src={coffee?.image} alt={coffee?.name || "Coffee Image"} />
                     </div>
                     <h4 className="date_text">Price: {coffee.price}$</h4>
                 </div>
@@ -86,7 +98,7 @@ export default function Details() {
 
                                 : (
                                     <div>
-                                        <LikeButton likes={coffee.likes} />
+                                        <LikeButton likes={likes} onLike={handleLikeUpdate}/>
                                     </div>
                                 )
                             }

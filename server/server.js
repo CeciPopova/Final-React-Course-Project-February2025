@@ -1409,130 +1409,118 @@
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
             }
         },
-        coffees: [
-            {
-                "_ownerId": "a7198302-8af6-48b3-b05b-4621615368e7",
-                "name": "Latte",
-                "ingredients": "Espresso, Steamed Milk",
-                "caffeine_mg": "64",
-                "serving_size_ml": "240",
-                "price": "4.75",
-                "image": "/images/Latte.avif",
-                "_createdOn": 1742740333261,
-                "likes": 4,
-                "_id": "44657380-4197-4237-b11a-acf760ac959d"
+        coffees: {
+            "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Espresso",
+                ingredients: "Espresso",
+                caffeine_mg: 64,
+                serving_size_ml: 30,
+                price: 2.5,
+                likes: 2,
+                image: "/images/img-1.png",
+                _id: "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb"
             },
-            {
-                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "name": "Espresso",
-                "ingredients": "Espresso",
-                "caffeine_mg": "64",
-                "serving_size_ml": "30",
-                "price": "2",
-                "image": "/images/img-1.png",
-                "_createdOn": 1742741433408,
-                "likes": 7,
-                "_id": "4ca10324-4535-4292-b864-c7480cd3a507"
+            "709861a1-66a0-4db1-9abb-e734619c1602": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Americano",
+                ingredients: "Espresso, Hot Water",
+                caffeine_mg: 64,
+                serving_size_ml: 120,
+                price: 3,
+                likes: 23,
+                image: "/images/amerikano.png",
+                _id: "709861a1-66a0-4db1-9abb-e734619c1602"
             },
-            {
-                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                "name": "Cappuccino",
-                "ingredients": "Espresso, Steamed milk, Foamed milk",
-                "caffeine_mg": "64",
-                "serving_size_ml": "150",
-                "price": "5",
-                "image": "/images/img-4.png",
-                "_createdOn": 1742741717884,
-                "likes": 9,
-                "_id": "a8175108-1138-4471-ba88-b43c0d0de6e9"
+            "4bfc6dae-4e40-4d5b-bbbf-be61db17c436": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Cappuccino",
+                ingredients: "Espresso, Steamed Milk, Foamed Milk",
+                caffeine_mg: 64,
+                serving_size_ml: 150,
+                price: 4.5,
+                likes: 3,
+                image: "/images/img-4.png",
+                _id: "4bfc6dae-4e40-4d5b-bbbf-be61db17c436"
             },
-            {
-                "name": "Americano",
-                "ingredients": "Espresso, Hot Water",
-                "caffeine_mg": "64",
-                "serving_size_ml": "120",
-                "price": "3",
-                "image": "/images/amerikano.png",
-                "_id": "313ab2b3-8baf-4482-a845-dbe3e33b0ac5",
-                "_createdOn": 1742932402769,
-                "likes": 2,
-                "_ownerId": "c747e304-8bba-418a-b456-c3c2dca874f1"
+            "c7f3d77a-f636-4a0d-af1f-3817b2d0080d": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Latte",
+                ingredients: "Espresso, Steamed Milk",
+                caffeine_mg: 64,
+                serving_size_ml: 240,
+                price: 4.75,
+                likes: 6,
+                image: "/images/Latte.avif",
+                _id: "c7f3d77a-f636-4a0d-af1f-3817b2d0080d"
             },
-            {
-                "name": "Mocha",
-                "ingredients": "Espresso, Steamed milk, Chocolate Syrup, Whipped Cream",
-                "caffeine_mg": "64",
-                "serving_size_ml": "240",
-                "price": "5.25",
-                "image": "/images/mocha-1.png",
-                "_id": "e732f309-59bf-4a4a-9840-82c79a8e6cf7",
-                "_createdOn": 1742934271328,
-                "likes": 29,
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db"
+            "60cabc83-e2ac-46ce-a057-6bfde6bc389b": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                name: "Mocha",
+                ingredients: "Espresso, Steamed Milk, Chocolate Syrup, Whipped Cream",
+                caffeine_mg: 64,
+                serving_size_ml: 240,
+                price: 5,
+                likes: 16,
+                image: "/images/mocha-1.png",
+                _id: "60cabc83-e2ac-46ce-a057-6bfde6bc389b"
             },
-            {
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
-                "name": "Macchiato",
-                "ingredients": "Espresso, Foamed Milk",
-                "caffeine_mg": "64",
-                "serving_size_ml": "90",
-                "price": "4.25",
-                "image": "/images/Macchiato.png",
-                "_createdOn": 1742935143199,
-                "likes": 12,
-                "_id": "e9cb4f0a-e900-4a9e-adc4-c164f0d4dbd0"
+            "3787cf57-0165-4190-afce-aa8c37719262": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                name: "Macchiato",
+                ingredients: "Espresso, Foamed Milk",
+                caffeine_mg: 64,
+                serving_size_ml: 90,
+                price: 4.25,
+                likes: 33,
+                image: "/images/Macchiato.png",
+                _id: "3787cf57-0165-4190-afce-aa8c37719262"
             },
-            {
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
-                "name": "Cold Brew",
-                "ingredients": "Cold Brew Coffee, Ice",
-                "caffeine_mg": "200",
-                "serving_size_ml": "300",
-                "price": "5.00",
-                "image": "/images/Cold-Brew.avif",
-                "_createdOn": 1742935509828,
-                "likes": 6,
-                "_id": "3353c087-8e80-4de7-a6cd-445480907319"
+            "15ace0fd-5521-425a-a0e7-015bb5275c77": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                name: "Matcha Latte",
+                ingredients: "Matcha powder, Cold milk, Ice",
+                caffeine_mg: 6,
+                serving_size_ml: 220,
+                price: 5.75,
+                likes: 12,
+                image: "/images/iced-matcha-latte.webp",
+                _id: "15ace0fd-5521-425a-a0e7-015bb5275c77"
             },
-            {
-                "name": "Iced Latte",
-                "ingredients": "Espresso, Cold Milk, Ice",
-                "caffeine_mg": "64",
-                "serving_size_ml": "300",
-                "price": "5.25",
-                "image": "/images/iced-latte.png",
-                "_id": "75b44d14-893d-4f81-91aa-cef777dd783a",
-                "_createdOn": 1742936079481,
-                "likes": 21,
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
+            "82814c56-7615-4ddd-9d03-9b50cab2100c": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                name: "Affogato",
+                ingredients: "Espresso, Vanilla Ice Cream",
+                caffeine_mg: 64,
+                serving_size_ml: 120,
+                price: 5.5,
+                likes: 19,
+                image: "/images/affogato.webp",
+                _id: "82814c56-7615-4ddd-9d03-9b50cab2100c"
             },
-            {
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
-                "name": "Affogato",
-                "ingredients": "Espresso, Vanilla Ice Cream",
-                "caffeine_mg": "64",
-                "serving_size_ml": "120",
-                "price": "5.50",
-                "image": "/images/affogato.webp",
-                "_createdOn": 1742937387561,
-                "likes": 28,
-                "_id": "282a3d35-6c6c-47a4-a216-8061a54abb79"
+            "f5f53910-7396-430c-bf5b-a49fded4e88e": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                name: "Cold Brew",
+                ingredients: "Cold Brew Coffee, Ice",
+                caffeine_mg: 200,
+                serving_size_ml: 300,
+                price: 5,
+                likes: 7,
+                image: "/images/Cold-Brew.avif",
+                _id: "f5f53910-7396-430c-bf5b-a49fded4e88e"
             },
-            {
-                "name": "Matcha Latte",
-                "ingredients": "Matcha powder, Cold milk, Ice",
-                "caffeine_mg": "60",
-                "serving_size_ml": "250",
-                "price": "5.50",
-                "image": "/images/iced-matcha-latte.webp",
-                "_id": "55334b15-fb0a-45e2-844b-869a623074a5",
-                "_createdOn": 1742938299497,
-                "likes": 7,
-                "_ownerId": "e814bb5e-b49f-453f-a627-6a2e164699db",
+            "c1516d3e-c396-4c25-9213-8a2e6218103e": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Iced Latte",
+                ingredients: "Espresso, Cold Milk, Ice",
+                caffeine_mg: 64,
+                serving_size_ml: 300,
+                price: 5.25,
+                likes: 6,
+                image: "/images/iced-latte.png",
+                _id: "c1516d3e-c396-4c25-9213-8a2e6218103e"
             }
-
-        ]
-
+        }
     };
     var rules$1 = {
         users: {
@@ -1585,11 +1573,27 @@
 
     app.use(express.json());
 
-    app.get("/", (req, res) => {
-      res.json({ message: "Backend is working!" });
+    // app.get("/", (req, res) => {
+        // res.json({ message: "Backend is working!" });
+    // });
+
+    // Order matters
+    app.get('/data/coffees/:coffeeId', (req, res) => {
+        console.log(`Received coffeeId from URL: ${req.params.coffeeId}`);
+        const { coffeeId } = req.params;
+        const coffee = seedData.find(coffee => coffee._id === coffeeId);
+
+        if (!coffee) {
+            return res.status(404).json({ message: "Coffee not found" });
+        }
+
+        res.json(coffee);
     });
 
-
+    // Catch-all 404 handler should come after route definitions
+    app.use((req, res) => {
+        res.status(404).json({ message: "Not Found" });
+    });
 
 
     const server = http__default['default'].createServer(requestHandler(plugins, services));
