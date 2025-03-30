@@ -4,7 +4,7 @@ import './Catalog.css'
 
 export default function Catalog() {
     const { coffees } = useCoffees();
-
+//console.log(coffees);
     if (!coffees) {
         return <h1>Loading coffees...</h1>;
     }

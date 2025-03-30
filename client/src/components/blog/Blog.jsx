@@ -9,7 +9,7 @@ export default function Blog() {
     if (!latestCoffees) {
         return <h1>Loading latest coffees...</h1>;
     }
-
+console.log(latestCoffees);
 
     return (
         <div className="blog_section layout_padding">
@@ -39,7 +39,7 @@ export default function Blog() {
                                 </div>
                                 {latestCoffees.length > 0 && (
                                     <div className="read_btn">
-                                        <Link to="/catalog">Discover More Coffees</Link>
+                                        <Link to="/coffees">Discover More Coffees</Link>
                                     </div>
                                 )}
 

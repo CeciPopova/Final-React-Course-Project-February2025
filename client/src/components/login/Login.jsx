@@ -30,7 +30,7 @@ export default function Login() {
             // Call the login API using the custom hook
             const authData = await login(email, password);
             userLoginHandler(authData);  // Update the user context
-            navigate('/catalog');  // Redirect to catalog page after successful login
+            navigate('/coffees');  // Redirect to catalog page after successful login
         } catch (err) {
             console.error('Login failed:', err);
             setFormError("Invalid email or password. Please try again.");  // Show a user-friendly error message
