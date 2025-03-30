@@ -13,24 +13,34 @@ export const useCoffees = () => {
 
     useEffect(() => {
         request.get(baseUrl)
-            .then(setCoffees)
+            .then(data => {
+                //console.log("✅ Fetched coffees data from API:", data);
+                setCoffees(data);
+            });
     }, []);
+    
 
     return {
         coffees,
     }
 }
 
+
 export const useCoffee = (coffeeId) => {
     const [coffee, setCoffee] = useState({});
 
     useEffect(() => {
+        if (!coffeeId) return; // Prevent running if coffeeId is missing
+    
         request.get(`${baseUrl}/${coffeeId}`)
-            .then(setCoffee);
-    }, [coffeeId])
+            .then(setCoffee)
+            .catch((err) => console.error("❌ Error fetching coffee:", err));
+    }, [coffeeId]);
+    
 
     return {
         coffee,
+
     }
 }
 
