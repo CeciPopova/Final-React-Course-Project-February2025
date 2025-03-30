@@ -53,7 +53,7 @@ export default function Create() {
             await create(coffeeData);
 
             // On success, navigate to the catalog
-            navigate('/catalog');
+            navigate('/coffees');
         } catch (error) {
             console.error('Error creating coffee:', error);
             setApiError('An error occurred while creating the coffee. Please try again.');

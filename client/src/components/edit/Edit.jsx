@@ -33,7 +33,7 @@ export default function Edit() {
 
     const isOwner = userId === coffee._ownerId;
     if (!isOwner) {
-        <Navigate to="/catalog" />
+        <Navigate to="/coffees" />
     }
     return (
         <div className={styles["create_section"]}>
