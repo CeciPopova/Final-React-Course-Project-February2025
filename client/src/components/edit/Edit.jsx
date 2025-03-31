@@ -14,22 +14,24 @@ export default function Edit() {
     if (!coffee) {
         return <h1>Loading coffee data...</h1>;
     }
-    
+
 
     const formSubmitHandler = async (event) => {
         event.preventDefault(); // Prevent page refresh
         const formData = new FormData(event.target);
         const coffeeData = Object.fromEntries(formData);
-    
+
         try {
             await edit(coffeeId, coffeeData);
+
             navigate(`/coffees/${coffeeId}/details`);
         } catch (error) {
             console.error("Failed to edit coffee:", error);
+            
             alert("Error editing coffee. Please try again.");
         }
     };
-    
+
 
     const isOwner = userId === coffee._ownerId;
     if (!isOwner) {

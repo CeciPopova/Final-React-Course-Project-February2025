@@ -14,6 +14,7 @@ import Edit from './components/edit/Edit'
 import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
 import GoogleMapComponent from './components/location/Location'
+import Profile from './components/profile/Profile'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path='/blog' element={<Blog />} />
             <Route element={<AuthGuard />}>
               <Route path='/create' element={<Create />} />
+              <Route path='/profile' element={<Profile />} />
               <Route path='/coffees/:coffeeId/edit' element={<Edit />} />
             </Route >
             <Route path='/login' element={<Login />} />

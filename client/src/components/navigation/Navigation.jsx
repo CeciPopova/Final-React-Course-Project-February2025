@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 
 export default function Navigation() {
 
-    const { isAuthenticated, email } = useAuth();
+    const { isAuthenticated, username } = useAuth();
 
     return (
         <div className="container">
@@ -28,13 +28,17 @@ export default function Navigation() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/google">Location</Link>
                         </li>
-                        {isAuthenticated
-
-                            ? (<li className="nav-item">
+                        {isAuthenticated &&
+                            (<li className="nav-item">
                                 <Link className="nav-link" to="/create">Create</Link>
                             </li>)
-                            : ''
                         }
+                        {isAuthenticated &&
+                            (<li className="nav-item">
+                                <Link className="nav-link" to="/profile">{username}</Link>
+                            </li>)
+                        }
+
                     </ul>
 
 
@@ -49,7 +53,7 @@ export default function Navigation() {
 
                             : (<div className="login_bt">
                                 <ul>
-                                    <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout {email}</Link></li>
+                                    <li><Link to="/logout"><span className="user_icon"><i className="fa fa-user" aria-hidden="true"></i></span>Logout</Link></li>
                                 </ul>
                             </div>)
                         }
