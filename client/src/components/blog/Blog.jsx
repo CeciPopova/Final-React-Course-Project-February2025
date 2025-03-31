@@ -9,7 +9,7 @@ export default function Blog() {
     if (!latestCoffees) {
         return <h1>Loading latest coffees...</h1>;
     }
-console.log(latestCoffees);
+    console.log(latestCoffees);
 
     return (
         <div className="blog_section layout_padding">
