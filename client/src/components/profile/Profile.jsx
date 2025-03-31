@@ -26,7 +26,7 @@ export default function Profile() {
 
 
                 <div className="product-list">
-                    <h2 className="section-title">Your Products</h2>
+                    <h2 className="section-title">Your Coffees</h2>
                     <div className="row">
                         {coffees.length === 0
                             ? <h1>No coffees yet!</h1>
