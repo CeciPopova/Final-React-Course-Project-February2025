@@ -13,6 +13,7 @@ export default function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [image, setImage] = useState('');
     const [formError, setFormError] = useState("");  // Form validation error
     const [error, setError] = useState("");  // API error
     const [loading, setLoading] = useState(false);  // Track if the request is pending
@@ -26,7 +27,7 @@ export default function Register() {
         setError("");
 
         // Simple form validation: Check if all fields are provided
-        if (!name || !email || !password || !confirmPassword) {
+        if (!name || !email || !password || !confirmPassword || !image) {
             setFormError("All fields are required.");
             return;
         }
@@ -116,7 +117,16 @@ export default function Register() {
                                             required
                                         />
                                     </div>
-
+                                    <div className='input_group'>
+                                        <input
+                                            type="text"
+                                            className="mail_text"
+                                            placeholder="Profile picture"
+                                            name="image"
+                                            value={image}
+                                            onChange={(e) => setImage(e.target.value)}
+                                        />
+                                    </div>
                                     {/* Display form validation error */}
                                     {formError && <div className={styles["error_message"]}>{formError}</div>}
 
