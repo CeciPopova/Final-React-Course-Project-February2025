@@ -51,3 +51,10 @@
     font-size: 14px;
     margin-top: 10px;
 }
+.strong {
+    font-weight: 600;
+}
+
+.strong:hover {
+    color: red;
+}
