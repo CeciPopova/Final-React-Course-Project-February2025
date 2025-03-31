@@ -4,11 +4,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from './Details.module.css'
 import { useCoffee, useDeleteCoffee } from "../../api/coffeeApi";
 import useAuth from "../../hooks/useAuth";
-import LikeButton from "../likeButton/Likebutton";
 import CommentsView from "../coments-show/CommentsShow";
 import CommentsCreate from "../comments-create/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
-import { useEffect, useState } from 'react';
 
 export default function Details() {
     const { userId, username, isAuthenticated } = useAuth();
@@ -18,24 +16,14 @@ export default function Details() {
     const { deleteCoffee } = useDeleteCoffee();
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
-    const [likes, setLikes] = useState(() => coffee?.likes ?? 0);
 
-    useEffect(() => {
-        if (coffee && typeof coffee.likes === "number") {
-            setLikes(coffee.likes);  // Update likes only when data is available
-        }
-    }, [coffee]);
-    
+
 
     if (!coffee) {
         return <p>Loading coffee details...</p>;
     }
 
     //console.log("Details Page - coffeeId from useParams:", coffeeId);
-
-    const handleLikeUpdate = (newLikes) => {
-        setLikes(newLikes);
-    };
 
     const coffeeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to delete ${coffee?.name || "this"} coffee?`);
@@ -89,18 +77,12 @@ export default function Details() {
                                 <p className="lorem_text"><strong>Added on: </strong>{moment(coffee?._createdOn).format('LL')}</p>
 
                             </div>
-                            {isOwner
-                                ?
+                            {isOwner &&
                                 (<div className={styles["details-btn"]}>
                                     <div className="read_btn"><Link className="button" to={`/coffees/${coffee._id}/edit`}>Edit</Link></div>
                                     <div className="read_btn"><button className={styles["button"]} onClick={coffeeDeleteClickHandler}>Delete</button></div>
                                 </div>)
 
-                                : (
-                                    <div>
-                                        <LikeButton likes={likes} onLike={handleLikeUpdate}/>
-                                    </div>
-                                )
                             }
 
                         </div>

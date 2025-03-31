@@ -1340,6 +1340,7 @@
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
                 email: "admin@abv.bg",
                 username: "Admin",
+                image: "/images/client-img1.png",
                 hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
             }
         },
@@ -1409,8 +1410,8 @@
                 _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
             }
         },
-        coffees: {
-            "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb": {
+        coffees: [
+            {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 name: "Espresso",
                 ingredients: "Espresso",
@@ -1419,9 +1420,10 @@
                 price: 2.5,
                 likes: 2,
                 image: "/images/img-1.png",
+                _createdOn: 1614260681375,
                 _id: "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb"
             },
-            "709861a1-66a0-4db1-9abb-e734619c1602": {
+            {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 name: "Americano",
                 ingredients: "Espresso, Hot Water",
@@ -1430,9 +1432,10 @@
                 price: 3,
                 likes: 23,
                 image: "/images/amerikano.png",
+                _createdOn: 1743403577855,
                 _id: "709861a1-66a0-4db1-9abb-e734619c1602"
             },
-            "4bfc6dae-4e40-4d5b-bbbf-be61db17c436": {
+            {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 name: "Cappuccino",
                 ingredients: "Espresso, Steamed Milk, Foamed Milk",
@@ -1441,9 +1444,10 @@
                 price: 4.5,
                 likes: 3,
                 image: "/images/img-4.png",
+                _createdOn: 1743403577855,
                 _id: "4bfc6dae-4e40-4d5b-bbbf-be61db17c436"
             },
-            "c7f3d77a-f636-4a0d-af1f-3817b2d0080d": {
+            {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 name: "Latte",
                 ingredients: "Espresso, Steamed Milk",
@@ -1452,9 +1456,10 @@
                 price: 4.75,
                 likes: 6,
                 image: "/images/Latte.avif",
+                _createdOn: 1743403577855,
                 _id: "c7f3d77a-f636-4a0d-af1f-3817b2d0080d"
             },
-            "60cabc83-e2ac-46ce-a057-6bfde6bc389b": {
+            {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Mocha",
                 ingredients: "Espresso, Steamed Milk, Chocolate Syrup, Whipped Cream",
@@ -1463,9 +1468,10 @@
                 price: 5,
                 likes: 16,
                 image: "/images/mocha-1.png",
+                _createdOn: 1743403577855,
                 _id: "60cabc83-e2ac-46ce-a057-6bfde6bc389b"
             },
-            "3787cf57-0165-4190-afce-aa8c37719262": {
+            {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Macchiato",
                 ingredients: "Espresso, Foamed Milk",
@@ -1474,9 +1480,10 @@
                 price: 4.25,
                 likes: 33,
                 image: "/images/Macchiato.png",
+                _createdOn: 1743403577855,
                 _id: "3787cf57-0165-4190-afce-aa8c37719262"
             },
-            "15ace0fd-5521-425a-a0e7-015bb5275c77": {
+            {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Matcha Latte",
                 ingredients: "Matcha powder, Cold milk, Ice",
@@ -1485,9 +1492,10 @@
                 price: 5.75,
                 likes: 12,
                 image: "/images/iced-matcha-latte.webp",
+                _createdOn: 1743403577855,
                 _id: "15ace0fd-5521-425a-a0e7-015bb5275c77"
             },
-            "82814c56-7615-4ddd-9d03-9b50cab2100c": {
+            {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Affogato",
                 ingredients: "Espresso, Vanilla Ice Cream",
@@ -1496,9 +1504,10 @@
                 price: 5.5,
                 likes: 19,
                 image: "/images/affogato.webp",
+                _createdOn: 1743403577855,
                 _id: "82814c56-7615-4ddd-9d03-9b50cab2100c"
             },
-            "f5f53910-7396-430c-bf5b-a49fded4e88e": {
+            {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
                 name: "Cold Brew",
                 ingredients: "Cold Brew Coffee, Ice",
@@ -1507,9 +1516,10 @@
                 price: 5,
                 likes: 7,
                 image: "/images/Cold-Brew.avif",
+                _createdOn: 1743403577855,
                 _id: "f5f53910-7396-430c-bf5b-a49fded4e88e"
             },
-            "c1516d3e-c396-4c25-9213-8a2e6218103e": {
+            {
                 _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
                 name: "Iced Latte",
                 ingredients: "Espresso, Cold Milk, Ice",
@@ -1518,9 +1528,11 @@
                 price: 5.25,
                 likes: 6,
                 image: "/images/iced-latte.png",
+                _createdOn: 1743403577855,
                 _id: "c1516d3e-c396-4c25-9213-8a2e6218103e"
             }
-        }
+        ]
+
     };
     var rules$1 = {
         users: {
@@ -1574,7 +1586,7 @@
     app.use(express.json());
 
     // app.get("/", (req, res) => {
-        // res.json({ message: "Backend is working!" });
+    // res.json({ message: "Backend is working!" });
     // });
 
     // Order matters
