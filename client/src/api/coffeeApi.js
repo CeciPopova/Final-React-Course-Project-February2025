@@ -18,7 +18,7 @@ export const useCoffees = () => {
                 setCoffees(data);
             });
     }, []);
-    
+
 
     return {
         coffees,
@@ -31,12 +31,12 @@ export const useCoffee = (coffeeId) => {
 
     useEffect(() => {
         if (!coffeeId) return; // Prevent running if coffeeId is missing
-    
+
         request.get(`${baseUrl}/${coffeeId}`)
             .then(setCoffee)
             .catch((err) => console.error("❌ Error fetching coffee:", err));
     }, [coffeeId]);
-    
+
 
     return {
         coffee,
@@ -100,4 +100,3 @@ export const useLatestCoffees = () => {
         latestCoffees
     }
 }
-
