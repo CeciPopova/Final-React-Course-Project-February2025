@@ -3,8 +3,8 @@ import request from '../utils/requester';
 import { UserContext } from '../contexts/UserContext';
 import { useEffect } from 'react';
 
-const baseUrl = 'http://localhost:3030/users';
-//const baseUrl = 'https://softuni-practice-server-f4y1.onrender.com/users';
+//const baseUrl = 'http://localhost:3030/users';
+const baseUrl = 'https://softuni-practice-server-f4y1.onrender.com/users';
 
 export const useLogin = () => {
     const [loading, setLoading] = useState(false);
