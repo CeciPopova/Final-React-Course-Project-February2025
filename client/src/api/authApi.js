@@ -12,7 +12,7 @@ export const useLogin = () => {
 
     const login = (email, password) => {
         setLoading(true);
-        setError(null);  // Reset previous errors
+        setError(null);  
         try {
             const result = request.post(`${baseUrl}/login`, { email, password });
 
@@ -37,11 +37,11 @@ export const useRegister = () => {
     const [error, setError] = useState(null);
 
 
-    const register = (email, password) => {
+    const register = (username, email, password, image) => {
         setLoading(true);
         setError(null);
         try {
-            return request.post(`${baseUrl}/register`, { email, password });
+            return request.post(`${baseUrl}/register`, { username, email, password, image });
         } catch (err) {
 
             setError(err.message);

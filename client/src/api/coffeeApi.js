@@ -40,7 +40,7 @@ export const useCoffee = (coffeeId) => {
 
     return {
         coffee,
-
+        setCoffee
     }
 }
 
