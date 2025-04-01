@@ -3,6 +3,7 @@ import { useRegister } from '../../api/authApi';
 import styles from './Register.module.css';
 import { UserContext } from '../../contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function Register() {
     const navigate = useNavigate();
@@ -14,44 +15,54 @@ export default function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [image, setImage] = useState('');
-    const [formError, setFormError] = useState("");  // Form validation error
-    const [error, setError] = useState("");  // API error
-    const [loading, setLoading] = useState(false);  // Track if the request is pending
+    const [formError, setFormError] = useState("");  
+    const [error, setError] = useState("");  
+    const [loading, setLoading] = useState(false);
 
-    // Register handler
+    
     const registerHandler = async (event) => {
-        event.preventDefault();  // Prevent the default form submission
+        event.preventDefault();  
 
-        // Reset previous errors
         setFormError("");
         setError("");
 
-        // Simple form validation: Check if all fields are provided
+    
         if (!name || !email || !password || !confirmPassword || !image) {
             setFormError("All fields are required.");
             return;
         }
 
-        // Check if passwords match
+    
         if (password !== confirmPassword) {
             setFormError("Passwords do not match.");
             return;
         }
 
+        
+        if (password.length < 4) {
+            setFormError("Password must be at least 4 characters long.");
+            return;
+        }
+
         try {
-            setLoading(true);  // Set loading state
+            setLoading(true); 
 
-            // Call the register API using the custom hook
-            const authData = await register(email, password);
+            const authData = await register(name, email, password, image);
 
-            userLoginHandler(authData);  // Update the user context
-            navigate('/');  // Redirect to home page after successful registration
+            userLoginHandler(authData); 
+            toast('Success!', {type: 'success'})
+            navigate('/'); 
 
         } catch (err) {
             console.error('Registration failed:', err);
-            setError("An error occurred during registration. Please try again.");  // Show a user-friendly error message
+
+            if (err?.response?.status === 400) {
+                setError("Email already in use. Please try with a different email.");
+            } else {
+                setError("An error occurred during registration. Please try again.");
+            }
         } finally {
-            setLoading(false);  // Reset loading state
+            setLoading(false); 
         }
     };
 
@@ -121,12 +132,13 @@ export default function Register() {
                                         <input
                                             type="text"
                                             className="mail_text"
-                                            placeholder="Profile picture"
+                                            placeholder="Profile picture URL"
                                             name="image"
                                             value={image}
                                             onChange={(e) => setImage(e.target.value)}
                                         />
                                     </div>
+                                    
                                     {/* Display form validation error */}
                                     {formError && <div className={styles["error_message"]}>{formError}</div>}
 

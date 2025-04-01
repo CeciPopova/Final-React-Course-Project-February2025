@@ -15,13 +15,14 @@ import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
 import GoogleMapComponent from './components/location/Location'
 import Profile from './components/profile/Profile'
-
+import {ToastContainer} from 'react-toastify'
 function App() {
 
   return (
     <UserProvider>
       <>
         <div className="header_section">
+          
           <Navigation />
           <Routes>
             <Route path='/' element={<Home />} />
@@ -40,6 +41,7 @@ function App() {
             <Route path='/google' element={<GoogleMapComponent />} />
           </Routes>
         </div>
+        <ToastContainer />
         <Footer />
       </>
     </UserProvider>
