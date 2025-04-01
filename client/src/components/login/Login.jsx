@@ -8,7 +8,7 @@ import { toast} from 'react-toastify'
 export default function Login() {
     const navigate = useNavigate();
     const { userLoginHandler } = useContext(UserContext);
-    const { login, loading, error: apiError } = useLogin();
+    const { login, loading , error} = useLogin();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,38 +16,36 @@ export default function Login() {
 
     const loginHandler = async (event) => {
         event.preventDefault();
-        setFormError(""); 
-
+        setFormError("");
     
         if (!email || !password) {
             setFormError("Please enter both email and password.");
             return;
         }
-
+    
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             setFormError("Please enter a valid email address.");
             return;
         }
-
+    
         if (password.length < 4) {
             setFormError("Password must be at least 4 characters long.");
             return;
         }
-
+    
         try {
             const authData = await login(email, password);
-            userLoginHandler(authData); 
-
-            toast('Successful Login',{type: 'success'});
-
-            navigate('/profile');  
+            userLoginHandler(authData);
+    
+            toast('Successful Login', { type: 'success' });
+    
+            navigate('/profile');
         } catch (err) {
-            console.log(err);
-            toast(err.message,{type: 'error'})
+            toast(err.message || 'Login failed', { type: 'error' }); 
         }
     };
-
+    
     return (
         <div className={styles["login_section"]}>
             <div className="container">
@@ -93,7 +91,7 @@ export default function Login() {
                                     {formError && <div className={styles["error_message"]}>{formError}</div>}
 
                                     {/* Display API error if any */}
-                                    {apiError && <div className={styles["error_message"]}>{apiError}</div>}
+                                    {error && <div className={styles["error_message"]}>{error}</div>}
 
                                     <div className={styles["send_bt"]}>
                                         <button type="submit" disabled={loading}>

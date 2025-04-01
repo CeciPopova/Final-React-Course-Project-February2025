@@ -10,16 +10,21 @@ export const useLogin = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const login = (email, password) => {
+    const login = async (email, password) => {
         setLoading(true);
-        setError(null);  
+        setError(null);
+
         try {
-            const result = request.post(`${baseUrl}/login`, { email, password });
+            const result = await request.post(`${baseUrl}/login`, { email, password });
+
+            if (!result || !result.data || !result.data.token) {
+                throw new Error('Invalid email or password');
+            }
 
             return result;
 
         } catch (err) {
-            setError(err.message);
+            setError(err.message || 'An error occurred during login');
             throw err;
 
         } finally {
