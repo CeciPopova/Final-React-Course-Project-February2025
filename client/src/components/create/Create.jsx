@@ -7,7 +7,6 @@ export default function Create() {
     const navigate = useNavigate();
     const { create } = useCreateCoffee();
 
-    // State variables for form fields and errors
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [caffeineMg, setCaffeineMg] = useState('');
@@ -18,19 +17,17 @@ export default function Create() {
     const [apiError, setApiError] = useState('');
     const [loading, setLoading] = useState(false);
 
-    // Form submission handler
     const submitAction = async (event) => {
         event.preventDefault();
         setFormError('');
         setApiError('');
 
-        // Simple form validation: Check if all fields are filled and that price, caffeine, and serving size are valid numbers
         if (!name || !ingredients || !caffeineMg || !servingSize || !price || !image) {
             setFormError('All fields are required.');
             return;
         }
 
-        // Check if numeric fields contain valid numbers
+
         if (isNaN(caffeineMg) || isNaN(servingSize) || isNaN(price)) {
             setFormError('Caffeine, Serving size, and Price must be valid numbers.');
             return;
@@ -39,7 +36,7 @@ export default function Create() {
         try {
             setLoading(true);
 
-            // Prepare the coffee data to be sent to the API
+
             const coffeeData = {
                 name,
                 ingredients,
@@ -49,11 +46,11 @@ export default function Create() {
                 image
             };
 
-            // Call the create API function
             await create(coffeeData);
 
-            // On success, navigate to the catalog
+    
             navigate('/coffees');
+
         } catch (error) {
             console.error('Error creating coffee:', error);
             setApiError('An error occurred while creating the coffee. Please try again.');

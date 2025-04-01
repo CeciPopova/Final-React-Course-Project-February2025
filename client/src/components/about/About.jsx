@@ -23,9 +23,6 @@ export default function About() {
             </div>
           </div>
           <div className={styles["row"]}>
-            <div className="col-md-6">
-              <div className={styles["image_iman"]}><img src="/images/coffeeBeans.jpg" className={styles["about_img"]} /></div>
-            </div>
 
             <div className="col-md-6">
               <div className="about_taital_box">

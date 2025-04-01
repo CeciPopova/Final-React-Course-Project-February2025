@@ -1,4 +1,4 @@
-import styles from './Comment-Show.module.css'
+import './Comment-Show.css'
 
 export default function CommentsView({
     comments,
@@ -9,7 +9,7 @@ export default function CommentsView({
             <ul>
                  {comments.length > 0 
                     ? comments.map(({ _id, comment, author }) => (
-                        <li key={_id} className={styles["comment"]} >
+                        <li key={_id} className="comment" >
                             <p><strong>{author.username}</strong>: {comment}</p>
                         </li>
                     ))

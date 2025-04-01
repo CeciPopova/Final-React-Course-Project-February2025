@@ -7,6 +7,8 @@ export default function Profile() {
     const { coffees } = useCoffees()
     const { email, username, userId, image } = useAuth();
     console.log(userId);
+    console.log(username);
+    console.log(email);
 
     const filterCoffees = coffees.filter(coffee => coffee._ownerId === userId)
     console.log(filterCoffees);
@@ -17,7 +19,7 @@ export default function Profile() {
             <div className="profile-container">
 
                 <div className="profile-header">
-                    <img src={image} alt="User Avatar" className="profile-avatar" />
+                    <img src={image} alt="/images/client-img2.png" className="profile-avatar" />
                     <div className="profile-info">
                         <h1 className="profile-name">{username}</h1>
                         <p className="profile-email">{email}</p>
@@ -28,7 +30,7 @@ export default function Profile() {
                 <div className="product-list">
                     <h2 className="section-title">Your Coffees</h2>
                     <div className="row">
-                        {coffees.length === 0
+                        {filterCoffees.length === 0
                             ? <h1>No coffees yet!</h1>
                             : (
 

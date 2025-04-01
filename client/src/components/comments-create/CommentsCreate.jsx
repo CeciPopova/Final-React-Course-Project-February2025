@@ -21,7 +21,7 @@ export default function CommentsCreate({
     };
     
     return (
-        <article className="create-comment"> 
+        <article className={styles["create-comment"]}> 
             <form className="form" action={commentAction}>
                 <textarea className={styles["comment-text"]} name="comment" placeholder="Add New Comment......"></textarea>
                 <div className={styles["read_btn"]}><input className={styles["button"]} type="submit" value="Add Comment" /></div>

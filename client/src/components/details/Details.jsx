@@ -17,12 +17,6 @@ export default function Details() {
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
-
-
-    if (!coffee) {
-        return <p>Loading coffee details...</p>;
-    }
-
     //console.log("Details Page - coffeeId from useParams:", coffeeId);
 
     const coffeeDeleteClickHandler = async () => {
@@ -63,11 +57,10 @@ export default function Details() {
                     <div className={styles["blog_img"]}>
                         <img className={styles["image"]} src={coffee?.image} alt={coffee?.name || "Coffee Image"} />
                     </div>
-                    <h4 className="date_text">Price: {coffee.price}$</h4>
+                    <h4 className={styles["price"]}>Price: {coffee.price}$</h4>
                 </div>
-
-                <div className="col-md-6">
-                    <div className="details_box">
+                <div className={styles["details-content"]}>
+                    <div className={styles["details-box"]}>
                         <div className={styles["details-text"]}>
                             <h4 className="prep_text">{coffee.name}</h4>
                             <div>
@@ -89,7 +82,6 @@ export default function Details() {
                         <CommentsView comments={comments} />
                     </div>
                 </div>
-
                 <div className={styles["comments"]}>
 
                     {isAuthenticated
