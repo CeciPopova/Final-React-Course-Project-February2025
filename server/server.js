@@ -1403,6 +1403,9 @@
                 _createdOn: 1613551388703
             }
         },
+        likes: {
+
+        },
         comments: {
             "0a272c58-b7ea-4e09-a000-7ec988248f66": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1420,7 +1423,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 30,
                 price: 2.5,
-                likes: 2,
                 image: "/images/img-1.png",
                 _createdOn: 1614260681375,
                 _id: "3649e6f7-f7e4-419b-afa3-32cb9faf1ccb"
@@ -1432,7 +1434,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 120,
                 price: 3,
-                likes: 23,
                 image: "/images/amerikano.png",
                 _createdOn: 1743403577855,
                 _id: "709861a1-66a0-4db1-9abb-e734619c1602"
@@ -1444,7 +1445,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 150,
                 price: 4.5,
-                likes: 3,
                 image: "/images/img-4.png",
                 _createdOn: 1743403577855,
                 _id: "4bfc6dae-4e40-4d5b-bbbf-be61db17c436"
@@ -1456,7 +1456,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 240,
                 price: 4.75,
-                likes: 6,
                 image: "/images/Latte.avif",
                 _createdOn: 1743403577855,
                 _id: "c7f3d77a-f636-4a0d-af1f-3817b2d0080d"
@@ -1468,7 +1467,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 240,
                 price: 5,
-                likes: 16,
                 image: "/images/mocha-1.png",
                 _createdOn: 1743403577855,
                 _id: "60cabc83-e2ac-46ce-a057-6bfde6bc389b"
@@ -1480,7 +1478,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 90,
                 price: 4.25,
-                likes: 33,
                 image: "/images/Macchiato.png",
                 _createdOn: 1743403577855,
                 _id: "3787cf57-0165-4190-afce-aa8c37719262"
@@ -1492,7 +1489,6 @@
                 caffeine_mg: 6,
                 serving_size_ml: 220,
                 price: 5.75,
-                likes: 12,
                 image: "/images/iced-matcha-latte.webp",
                 _createdOn: 1743403577855,
                 _id: "15ace0fd-5521-425a-a0e7-015bb5275c77"
@@ -1504,7 +1500,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 120,
                 price: 5.5,
-                likes: 19,
                 image: "/images/affogato.webp",
                 _createdOn: 1743403577855,
                 _id: "82814c56-7615-4ddd-9d03-9b50cab2100c"
@@ -1516,7 +1511,6 @@
                 caffeine_mg: 200,
                 serving_size_ml: 300,
                 price: 5,
-                likes: 7,
                 image: "/images/Cold-Brew.avif",
                 _createdOn: 1743403577855,
                 _id: "f5f53910-7396-430c-bf5b-a49fded4e88e"
@@ -1528,7 +1522,6 @@
                 caffeine_mg: 64,
                 serving_size_ml: 300,
                 price: 5.25,
-                likes: 6,
                 image: "/images/iced-latte.png",
                 _createdOn: 1743403577855,
                 _id: "c1516d3e-c396-4c25-9213-8a2e6218103e"
