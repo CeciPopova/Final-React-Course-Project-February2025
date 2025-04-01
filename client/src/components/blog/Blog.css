@@ -1,9 +1,11 @@
 .blog_section {
-    background-color: aliceblue;
+  background-color: aliceblue;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .blog_img {
-    width: 100%;
-    height: 400px;
-    text-align: center;
+  width: 100%;
+  height: 400px;
+  text-align: center;
 }

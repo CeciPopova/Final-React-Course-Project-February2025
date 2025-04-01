@@ -1,6 +1,7 @@
 .coffee_section {
   background-color: whitesmoke;
-  
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .row-coffees {

@@ -1,41 +1,71 @@
+/* General Page Styling */
 .about_section {
   background-color: white;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  padding-top: 40px;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
+/* Strong Text Styling */
 .strong {
   font-weight: bold;
-  font-size: large;
+  font-size: 18px;
+  color: #8b4513;
 }
 
+/* About Section Container */
 .about_section_2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5em;
+  gap: 4rem;
 }
 
+/* Responsive Row Layout */
 .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
+/* About Image Styling */
 .about_img {
-  height: 370px;
-  border-radius: 3px;
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
+.about_img:hover {
+  transform: scale(1.05);
+}
+
+/* Cheers Section */
 .cheers {
-  margin-top: 100px;
+  margin-top: 80px;
   text-align: center;
+  font-size: 18px;
+  color: #5c3d31;
+  font-weight: bold;
   padding-bottom: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about_section {
+    padding: 30px 15px;
+  }
 }

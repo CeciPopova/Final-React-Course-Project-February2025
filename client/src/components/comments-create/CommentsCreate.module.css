@@ -1,18 +1,62 @@
-.button {
-    width: 100%;
-    float: left;
-    font-size: 16px;
-    color: #f01c1c;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #f01c1c;
-    text-transform: uppercase;
-    padding: 8px;
+.create-comment {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Textarea Styling */
 .comment-text {
-    border-radius: 5px;
-    margin-top: 15px;
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0.1);
-    padding: 20px;
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  resize: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.comment-text:focus {
+  border-color: #ff4d4d;
+  box-shadow: 0px 0px 8px rgba(255, 77, 77, 0.3);
+  outline: none;
+}
+
+/* Button Styling */
+.read_btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  max-width: 200px;
+  font-size: 16px;
+  color: white;
+  background-color: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #e63946;
 }
