@@ -14,7 +14,7 @@ export default function Home() {
                                         <h1 className="banner_taital">Coffee <br />Lovers</h1>
                                         <p className="banner_text">Explore the art and science of exquisite coffee with Coffee Lovers Signature Experiences. With several experiences to choose from, we invite you to learn about best-in-class brewing techniques and mixology skills. Come discover the world of coffee through immersive experiences designed to inspire.</p>
                                         <div className="btn_main">
-                                            <div className="about_bt active"><Link to="/about">About Us</Link></div>
+                                            <div className="about_bt"><Link to="/about">About Us</Link></div>
                                             <div className="callnow_bt"><Link to="/coffees">Coffees</Link></div>
                                         </div>
                                     </div>
