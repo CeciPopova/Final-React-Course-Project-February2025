@@ -17,9 +17,8 @@ export default function Edit() {
         return <h1>Loading coffee data...</h1>;
     }
 
-
     const formSubmitHandler = async (event) => {
-        event.preventDefault(); // Prevent page refresh
+        event.preventDefault(); 
         const formData = new FormData(event.target);
         const coffeeData = Object.fromEntries(formData);
 

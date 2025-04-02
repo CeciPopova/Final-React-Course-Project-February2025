@@ -50,7 +50,6 @@ export default function Catalog() {
                     Previous
                 </button>
                 <span> Page {page} </span>
-                {/* Optionally, disable Next if less than pageSize coffees are returned */}
                 <button disabled={coffees.length < pageSize} onClick={() => setPage(page + 1)}>
                     Next
                 </button>

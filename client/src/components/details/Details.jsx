@@ -17,7 +17,6 @@ export default function Details() {
     const { comments, addComment } = useComments(coffeeId);
     const { create } = useCreateComment();
 
-    //console.log("Details Page - coffeeId from useParams:", coffeeId);
 
     const coffeeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Do you want to delete ${coffee?.name || "this"} coffee?`);

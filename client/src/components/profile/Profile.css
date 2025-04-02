@@ -1,11 +1,10 @@
-/* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Basic styling for the profile container */
   .profile-container {
     background-color: aliceblue;
     border-radius: 15px;
@@ -15,7 +14,6 @@
     font-family: Arial, sans-serif;
   }
   
-  /* Styling for the profile header section */
   .profile-header {
     display: flex;
     align-items: center;
@@ -44,7 +42,7 @@
     color: #555;
   }
   
-  /* Styling for the product list section */
+  
   .product-list {
     padding-top: 20px;
   }
