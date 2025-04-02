@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom';
-import { useCoffees } from '../../api/coffeeApi';
+import { useFilterCoffees } from '../../api/coffeeApi';
 import useAuth from '../../hooks/useAuth'
 import './Profile.css'
 
 export default function Profile() {
-    const { coffees } = useCoffees()
+    const { filterCoffees } = useFilterCoffees()
     const { email, username, userId, image } = useAuth();
-    console.log(userId);
-    console.log(username);
-    console.log(email);
 
-    const filterCoffees = coffees.filter(coffee => coffee._ownerId === userId)
-    console.log(filterCoffees);
+    const filterCoffeesList = filterCoffees.filter(coffee => coffee._ownerId === userId)
+   // console.log(filterCoffeesList);
 
 
     return (
@@ -30,12 +27,12 @@ export default function Profile() {
                 <div className="product-list">
                     <h2 className="section-title">Your Coffees</h2>
                     <div className="row">
-                        {filterCoffees.length === 0
+                        {filterCoffeesList.length === 0
                             ? <h1>No coffees yet!</h1>
                             : (
 
                                 <div className="col-lg-3 col-md-6 row-coffees">
-                                    {filterCoffees.map((coffee) => (
+                                    {filterCoffeesList.map((coffee) => (
                                         <div key={coffee._id}>
                                             <div className="coffee_img"><img src={coffee.image} /></div>
                                             <div className="coffee_box">
@@ -51,9 +48,6 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-
-        
-        
         </>
     )
 }
