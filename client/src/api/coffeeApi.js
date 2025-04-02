@@ -7,23 +7,45 @@ import useAuth from "../hooks/useAuth";
 const baseUrl = 'https://softuni-practice-server-f4y1.onrender.com/data/coffees';
 
 
-export const useCoffees = () => {
+export const useCoffees = (page = 1, pageSize = 3) => {
     const [coffees, setCoffees] = useState([]);
-    //console.log("API URL:", import.meta.env.VITE_API_URL);
 
     useEffect(() => {
-        request.get(baseUrl)
-            .then(data => {
-                //console.log("✅ Fetched coffees data from API:", data);
-                setCoffees(data);
-            });
-    }, []);
+        const offset = (page - 1) * pageSize;
+        const url = `${baseUrl}?offset=${offset}&pageSize=${pageSize}`;
 
+        request.get(url)
+            .then(data => {
+                setCoffees(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching coffees:', error);
+            });
+    }, [page, pageSize]);
 
     return {
         coffees,
-    }
-}
+
+    };
+};
+
+
+// export const useCoffees = () => {
+//     const [coffees, setCoffees] = useState([]);
+//     //console.log("API URL:", import.meta.env.VITE_API_URL);
+
+//     useEffect(() => {
+//         request.get(baseUrl)
+//             .then(data => {
+//                 setCoffees(data);
+//             });
+//     }, []);
+
+
+//     return {
+//         coffees,
+//     }
+// }
 
 
 export const useCoffee = (coffeeId) => {

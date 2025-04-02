@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useCoffees } from '../../api/coffeeApi'
 import './Catalog.css'
+import { useState } from 'react';
 
 export default function Catalog() {
-    const { coffees } = useCoffees();
-//console.log(coffees);
+    const [page, setPage] = useState(1);
+    const pageSize = 3;
+    const { coffees } = useCoffees(page, pageSize);
+    //console.log(coffees);
     if (!coffees) {
         return <h1>Loading coffees...</h1>;
     }
@@ -42,7 +45,18 @@ export default function Catalog() {
                     </div>
                 </div>
             </div>
+            <div className="pagination">
+                <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+                    Previous
+                </button>
+                <span> Page {page} </span>
+                {/* Optionally, disable Next if less than pageSize coffees are returned */}
+                <button disabled={coffees.length < pageSize} onClick={() => setPage(page + 1)}>
+                    Next
+                </button>
+            </div>
         </div>
+        
 
     )
 }
