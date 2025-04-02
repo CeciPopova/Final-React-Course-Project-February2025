@@ -30,22 +30,19 @@ export const useCoffees = (page = 1, pageSize = 3) => {
 };
 
 
-// export const useCoffees = () => {
-//     const [coffees, setCoffees] = useState([]);
-//     //console.log("API URL:", import.meta.env.VITE_API_URL);
-
-//     useEffect(() => {
-//         request.get(baseUrl)
-//             .then(data => {
-//                 setCoffees(data);
-//             });
-//     }, []);
-
-
-//     return {
-//         coffees,
-//     }
-// }
+ export const useFilterCoffees = () => {
+     const [filterCoffees, setFilterCoffees] = useState([]);
+    
+     useEffect(() => {
+         request.get(baseUrl)
+             .then(data => {
+                 setFilterCoffees(data);
+             });
+     }, []);
+     return {
+         filterCoffees,
+     }
+ }
 
 
 export const useCoffee = (coffeeId) => {
