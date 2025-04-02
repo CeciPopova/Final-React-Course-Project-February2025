@@ -2,6 +2,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import styles from './Edit.module.css'
 import { useCoffee, useEditCoffee } from '../../api/coffeeApi';
 import useAuth from '../../hooks/useAuth';
+import Spinner from '../spinner/Spinner';
 
 
 export default function Edit() {
@@ -12,6 +13,7 @@ export default function Edit() {
     const { coffee } = useCoffee(coffeeId);
 
     if (!coffee) {
+        <Spinner />
         return <h1>Loading coffee data...</h1>;
     }
 
@@ -54,22 +56,54 @@ export default function Edit() {
                                 <form className={styles["create_form"]} onSubmit={formSubmitHandler} >
                                     <div>
                                         <div className={styles['input_group']}>
-                                            <input className="mail_text" type="text" defaultValue={coffee.name} name="name" />
+                                            <input className="mail_text" 
+                                            type="text" 
+                                            defaultValue={coffee.name} 
+                                            name="name" 
+                                            required
+                                            />
                                         </div>
                                         <div className={styles['input_group']}>
-                                            <input className="mail_text" type="text" defaultValue={coffee.ingredients} name="ingredients" />
+                                            <input className="mail_text" 
+                                            type="text" 
+                                            defaultValue={coffee.ingredients} 
+                                            name="ingredients" 
+                                            required
+                                            />
                                         </div>
                                         <div className={styles['input_group']}>
-                                            <input className="mail_text" type="text" defaultValue={coffee.caffeine_mg} name="caffeine_mg" />
+                                            <input className="mail_text" 
+                                            type="text" 
+                                            defaultValue={coffee.caffeine_mg} 
+                                            name="caffeine_mg" 
+                                            required
+                                            />
                                         </div>
                                         <div className='input_group'>
-                                            <input type="text" className="mail_text" defaultValue={coffee.serving_size_ml} name="serving_size_ml" />
+                                            <input type="text" 
+                                            className="mail_text" 
+                                            defaultValue={coffee.serving_size_ml} 
+                                            name="serving_size_ml" 
+                                            required
+                                            />
                                         </div>
                                         <div className='input_group'>
-                                            <input type="text" className="mail_text" defaultValue={coffee.price} name="price" />
+                                            <input type="text" 
+                                            className="mail_text" 
+                                            defaultValue={coffee.price} 
+                                            name="price" 
+                                            required
+                                            />
+
                                         </div>
                                         <div className='input_group'>
-                                            <input type="text" className="mail_text" defaultValue={coffee.image} name="image" />
+                                            <input 
+                                            type="text" 
+                                            className="mail_text" 
+                                            defaultValue={coffee.image} 
+                                            name="image" 
+                                            required
+                                            />
                                         </div>
                                     </div>
                                     <div className={styles["send_bt"]}>
