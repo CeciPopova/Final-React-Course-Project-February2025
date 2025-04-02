@@ -2,32 +2,28 @@ import { useState } from "react";
 
 export default function usePersistedState(stateKey, initialState) {
     const [state, setState] = useState(() => {
-
-        const persistedState = localStorage.getItem(stateKey);
-        if (!persistedState) {
+        try {
+            const persistedState = localStorage.getItem(stateKey);
+            if (!persistedState) {
+                return typeof initialState === 'function' ? initialState() : initialState;
+            }
+            return JSON.parse(persistedState);
+        } catch (error) {
+            console.error("Error reading from localStorage:", error);
             return typeof initialState === 'function' ? initialState() : initialState;
         }
-
-        const persistedStateData = JSON.parse(persistedState);
-
-        return persistedStateData;
     });
 
     const setPersistedState = (input) => {
+        try {
+            const data = typeof input === 'function' ? input(state) : input;
+            const persistedData = JSON.stringify(data);
+            localStorage.setItem(stateKey, persistedData);
+            setState(data);
+        } catch (error) {
+            console.error("Error writing to localStorage:", error);
+        }
+    };
 
-        const data = typeof input === 'function' ? input(state) : input;
-
-        // update localstorage - TODO: (try/catch)
-
-        const persistedData = JSON.stringify(data);
-
-        localStorage.setItem(stateKey, persistedData);
-
-        setState(data);
-    }
-
-    return [
-        state,
-        setPersistedState,
-    ]
+    return [state, setPersistedState];
 }
