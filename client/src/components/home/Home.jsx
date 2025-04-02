@@ -28,7 +28,7 @@ export default function Home() {
                                         <h1 className="banner_taital">Discover New Coffee Experience</h1>
                                         <p className="banner_text">Choose hot or iced coffee</p>
                                         <div className="btn_main">
-                                            <div className="about_bt active"><Link to="/coffees">Coffees</Link></div>
+                                            <div className="about_bt"><Link to="/coffees">Coffees</Link></div>
                                         </div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@ export default function Home() {
                                         <h1 className="banner_taital">Coffee <br />Lovers</h1>
                                         <p className="banner_text">more-or-less normal distribution of letters, as opposed to using </p>
                                         <div className="btn_main">
-                                            <div className="about_bt active"><Link to="/login">Login</Link></div>
+                                            <div className="about_bt"><Link to="/login">Login</Link></div>
                                             
                                         </div>
                                     </div>
