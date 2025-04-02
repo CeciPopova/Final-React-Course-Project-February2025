@@ -16,8 +16,8 @@ export const useLogin = () => {
 
         try {
             const result = await request.post(`${baseUrl}/login`, { email, password });
-
-            if (!result || !result.data || !result.data.token) {
+            
+            if (!result || !result.accessToken) {
                 throw new Error('Invalid email or password');
             }
 
