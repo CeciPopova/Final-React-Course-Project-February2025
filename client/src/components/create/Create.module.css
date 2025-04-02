@@ -2,6 +2,7 @@
     background-color: aliceblue;
     display: flex;
     max-width: 800px;
+    border-radius: 15px;
     margin: 0 auto;
     padding: 20px;
     flex-direction: column;

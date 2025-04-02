@@ -2,6 +2,7 @@
 .about_section {
   background-color: white;
   max-width: 800px;
+  border-radius: 15px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: 'Arial', sans-serif;

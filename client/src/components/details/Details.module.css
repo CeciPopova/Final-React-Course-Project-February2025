@@ -1,6 +1,7 @@
 .details-container {
   background-color: whitesmoke;
   max-width: 800px;
+  border-radius: 15px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
