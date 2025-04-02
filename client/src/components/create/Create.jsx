@@ -23,7 +23,7 @@ export default function Create() {
         setApiError('');
 
         if (!name || !ingredients || !caffeineMg || !servingSize || !price || !image) {
-            setFormError('All fields are required.');
+            setFormError("Required fields.");
             return;
         }
 

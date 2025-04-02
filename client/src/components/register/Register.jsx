@@ -18,7 +18,6 @@ export default function Register() {
     const [formError, setFormError] = useState("");  
     const [error, setError] = useState("");  
     const [loading, setLoading] = useState(false);
-
     
     const registerHandler = async (event) => {
         event.preventDefault();  
@@ -28,7 +27,7 @@ export default function Register() {
 
     
         if (!name || !email || !password || !confirmPassword || !image) {
-            setFormError("All fields are required.");
+            setFormError("Required fields.");
             return;
         }
 
@@ -58,8 +57,10 @@ export default function Register() {
 
             if (err?.response?.status === 400) {
                 setError("Email already in use. Please try with a different email.");
+                toast(error);
             } else {
                 setError("An error occurred during registration. Please try again.");
+                toast(error);
             }
         } finally {
             setLoading(false); 
