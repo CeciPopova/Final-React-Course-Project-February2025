@@ -61,10 +61,10 @@ node server.js
 
 
 ````
-🙋‍♀️ Author
+#🙋‍♀️ Author
 Made with ❤️ by Tsetsi Popova
 🌍 Based in Rethymno, Greece
 🧠 Currently learning React & JavaScript at SoftUni
 
-📫 Contact Me
+##📫 Contact Me
 GitHub: CeciPopova
