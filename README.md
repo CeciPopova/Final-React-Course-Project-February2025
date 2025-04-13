@@ -33,6 +33,9 @@ This is my final project for the React course at SoftUni. It's a simple coffee c
 
 ![Home Screenshot](./client/public/images/homeScreenshot.png)
 
+![Catalog Screenshot](./client/public/images/coffeesScreenshot.png)
+
+
 
 
 ## 📦 Getting Started Locally
