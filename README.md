@@ -52,8 +52,19 @@ npm install
 ```bash
 npm run dev
 
+
 ````
 #### Run the Fake Backend (if needed)
 uncomment the links
 ```bash
 node server.js
+
+
+````
+🙋‍♀️ Author
+Made with ❤️ by Tsetsi Popova
+🌍 Based in Rethymno, Greece
+🧠 Currently learning React & JavaScript at SoftUni
+
+📫 Contact Me
+GitHub: CeciPopova
