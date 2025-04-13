@@ -31,7 +31,9 @@ This is my final project for the React course at SoftUni. It's a simple coffee c
 
 ## 📸 Screenshots
 
-_Add screenshots of your app here (optional)_
+![Home Screenshot](./client/public/images/homeScreenshot.png)
+
+
 
 ## 📦 Getting Started Locally
 
