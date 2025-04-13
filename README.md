@@ -46,10 +46,10 @@ git clone https://github.com/CeciPopova/Final-React-Course-Project-February2025.
 cd Final-React-Course-Project-February2025
 npm install
 
-### Run the App
+#### Run the App
 npm run dev
 
 
-### Run the Fake Backend (if needed)
+#### Run the Fake Backend (if needed)
 uncomment the links
 node server.js
