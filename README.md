@@ -41,7 +41,7 @@ If you want to run the project on your machine:
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/CeciPopova/Final-React-Course-Project-February2025.git
+cd Final-React-Course-Project-February2025
 npm install
 
