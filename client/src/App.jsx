@@ -16,6 +16,7 @@ import AuthGuard from './components/guards/AuthGuard'
 import GoogleMapComponent from './components/location/Location'
 import Profile from './components/profile/Profile'
 import {ToastContainer} from 'react-toastify'
+import NotFound from './components/not-found/NotFound'
 function App() {
 
   return (
@@ -39,6 +40,7 @@ function App() {
             <Route path='/coffees/:coffeeId/details' element={<Details />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/google' element={<GoogleMapComponent />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <ToastContainer />
