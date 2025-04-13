@@ -23,6 +23,7 @@ This is my final project for the React course at SoftUni. It's a simple coffee c
 - React
 - React Router
 - CSS Modules
+- Vite
 - json-server (for backend simulation)
 
 ## 📸 Screenshots
@@ -45,3 +46,10 @@ git clone https://github.com/CeciPopova/Final-React-Course-Project-February2025.
 cd Final-React-Course-Project-February2025
 npm install
 
+### Run the App
+npm run dev
+
+
+### Run the Fake Backend (if needed)
+uncomment the links
+node server.js
