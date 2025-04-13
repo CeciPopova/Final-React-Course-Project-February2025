@@ -1,5 +1,3 @@
-Project deployed at  https://final-react-course-project-february2025.vercel.app/
-
 # ☕ Coffee Catalog App
 
 This is my final project for the React course at SoftUni. It's a simple coffee catalog where users can browse, add, edit, and delete coffee products. Built using **React**, **React Router**, and a fake backend with **json-server**.
