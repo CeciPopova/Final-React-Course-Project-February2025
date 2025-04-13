@@ -17,6 +17,9 @@ This is my final project for the React course at SoftUni. It's a simple coffee c
 - ✅ Error handling (try/catch)
 - ✅ Loading indicators
 - ✅ Protected routes and route guards
+- ✅ Conditional rendering (edit/delete/like/comments shown only when allowed)
+- ✅ Controlled and uncontrolled forms
+- ✅ Clean and responsive layout using CSS Modules
 
 ## 🧰 Built With
 
